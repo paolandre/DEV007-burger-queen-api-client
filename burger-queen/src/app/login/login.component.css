@@ -1,0 +1,51 @@
+.fondo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Asegura que el contenedor ocupe toda la altura visible */
+  height: 100vh;
+  margin: 0;
+  background: #303030;
+}
+
+.login-container {
+  max-width: 300px;
+  margin: 0 auto;
+  height: 400px;
+  padding: 20px;
+  border-radius: 5px;
+  background: #fffdf8;
+  box-shadow: 1px 1px 5px 1px #59343e;
+}
+
+.form {
+  margin-bottom: 10px;
+}
+
+.logo-login {
+  width: 250px;
+  height: 250px;
+}
+
+.caja-negra-login {
+  border-radius: 5px;
+  background: #303030;
+  box-shadow: 1px 1px 5px 1px #59343e;
+  padding: 10px;
+  justify-content: center;
+}
+
+.fondo-amarillo-login {
+  border-radius: 5px;
+  background: #f2a950;
+  box-shadow: 1px 1px 5px 1px #090909;
+  padding: 10px;
+  width: 320px;
+  height: 450px;
+  display: flex;
+  position: relative;
+}
+
+.form-input {
+  width: 90%;
+}
