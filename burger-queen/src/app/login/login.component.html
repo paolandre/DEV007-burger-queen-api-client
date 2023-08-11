@@ -1,1 +1,30 @@
-<p>login works!</p>
+<div class="fondo">
+  <div class="fondo-amarillo-login">
+    <div class="login-container">
+      <img src="./assets/logo.png" alt="logo" class="logo-login" />
+      <form class="caja-negra-login">
+        <div class="form">
+          <input
+            type="text"
+            placeholder="Correo"
+            name="email"
+            class="form-input"
+            [(ngModel)]="email"
+          />
+        </div>
+        <div class="form">
+          <input
+            type="contraseña"
+            placeholder="Contraseña"
+            name="password"
+            class="form-input"
+            [(ngModel)]="password"
+          />
+        </div>
+        <button type="submit" (click)="probar(email, password)">
+          Ingresar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
