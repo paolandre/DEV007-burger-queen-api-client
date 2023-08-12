@@ -2,20 +2,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Asegura que el contenedor ocupe toda la altura visible */
   height: 100vh;
   margin: 0;
   background: #303030;
 }
 
 .login-container {
-  max-width: 300px;
-  margin: 0 auto;
-  height: 400px;
+  height: 360px;
   padding: 20px;
   border-radius: 5px;
   background: #fffdf8;
   box-shadow: 1px 1px 5px 1px #59343e;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 40px;
 }
 
 .form {
@@ -23,15 +23,21 @@
 }
 
 .logo-login {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
 }
 
 .caja-negra-login {
   border-radius: 5px;
   background: #303030;
   box-shadow: 1px 1px 5px 1px #59343e;
-  padding: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  order: 99;
+  align-self: end;
   justify-content: center;
 }
 
@@ -39,13 +45,20 @@
   border-radius: 5px;
   background: #f2a950;
   box-shadow: 1px 1px 5px 1px #090909;
-  padding: 10px;
-  width: 320px;
-  height: 450px;
-  display: flex;
-  position: relative;
+  padding: 30px;
+  width: 310px;
 }
 
 .form-input {
-  width: 90%;
+  width: 100%;
+  display: flex;
+}
+
+.form {
+  justify-self: center;
+}
+
+.btn {
+  display: block;
+  width: 100%;
 }

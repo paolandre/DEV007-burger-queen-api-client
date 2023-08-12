@@ -1,0 +1,318 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    border-color: white;
+    border: 1px solid #ffffff;
+    position: relative;
+}
+
+.cuadro-izquierda {
+    border-radius: 5px;
+    background: #fffdf8;
+    box-shadow: 1px 1px 5px 1px #090909;
+    width: 340px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+
+}
+
+.logo-login {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+}
+
+.btn {
+    width: 100px;
+    display: block;
+    font-family: "League Spartan", sans-serif;
+    font-size: 12px;
+}
+
+.container-buttons {
+    justify-content: flex-start;
+    flex-direction: row;
+    display: flex;
+    gap: 10px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+}
+
+.container-products-column {
+    padding-left: 10px;
+    flex-direction: column;
+    display: flex;
+    gap: 10px;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.container-products-column::-webkit-scrollbar {
+    display: none;
+}
+
+.container-products-row {
+    flex-direction: row;
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+
+.product {
+    border-radius: 5px;
+    background: #F2E7CD;
+    height: 30px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    width: 70%;
+    box-shadow: 0px 0px 1px #59343e;
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+    gap: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.price {
+    border-radius: 5px;
+    background: #303030;
+    height: 30px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+    box-shadow: 0px 0px 1px #59343e;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-family: "League Spartan", sans-serif;
+    font-size: 12px;
+}
+
+.product:hover {
+    background: #59343e;
+    color: white;
+}
+
+.cuadros-pedidos-listos {
+    background: #f2a950;
+    margin-top: auto;
+    flex-direction: column;
+    display: flex;
+    gap: 5px;
+    justify-content: flex-start;
+    text-align: center;
+    height: 140px;
+}
+
+h3 {
+    width: 100%;
+    margin-bottom: -7px;
+    padding-bottom: 8px;
+    font-family: "League Spartan", sans-serif;
+    font-size: 13px;
+}
+
+.pedido-listo {
+    order: 1;
+    justify-content: center;
+    font-family: "League Spartan", sans-serif;
+    font-size: 12px;
+    margin: 5px;
+
+}
+
+.column-direction {
+    padding: 10px;
+    text-align: center;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.column-direction::-webkit-scrollbar {
+    display: none;
+    /* Desactiva el scrollbar en navegadores basados en WebKit (como Chrome y Safari) */
+}
+
+.cuadro-derecha {
+    border-radius: 5px;
+    background: #f2a950;
+    box-shadow: 1px 1px 5px 1px #090909;
+    width: 340px;
+    height: 500px;
+    flex-direction: column;
+    box-shadow: inset 0px 0px 3px #59343e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-derecho-contiene-todo {
+    width: 290px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background-color: aquamarine;
+}
+
+.total-cuenta-titulo {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.total-cuenta {
+    border-radius: 3px;
+    background: #303030;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0px 0px 1px #59343e;
+    color: white;
+    font-family: "League Spartan", sans-serif;
+    font-size: 13px;
+    width: 100%;
+    padding: 5px 0px;
+    margin-bottom: -1px;
+}
+
+.container-pequeño-derecho {
+    border-radius: 3px;
+    background: #FFFDF8;
+    border: none;
+    box-shadow: 0px 0px 1px #59343e;
+    color: black;
+    font-family: "League Spartan", sans-serif;
+    font-size: 13px;
+    width: 100%;
+    height: 100%;
+}
+
+.suma-cuenta {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    padding: 5px 0px;
+    height: 30px;
+    width: 100%;
+    margin-top: -4px;
+}
+
+.total-texto {
+    border-radius: 3px;
+    background: #303030;
+    font-weight: bold;
+    width: 30%;
+    box-shadow: 0px 0px 1px #59343e;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-family: "League Spartan", sans-serif;
+    font-size: 12px;
+}
+
+.numero-total {
+    border-radius: 3px;
+    background: #F2E7CD;
+    font-weight: bold;
+    width: 70%;
+    box-shadow: 0px 0px 1px #59343e;
+    color: black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-family: "League Spartan", sans-serif;
+    font-size: 12px;
+}
+
+.cocina {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-cocina {
+    width: 100px;
+    display: block;
+    font-family: "League Spartan", sans-serif;
+    font-size: 12px;
+    align-self: center;
+    margin-top: 10px;
+}
+
+.container-cuenta-column {
+    padding-left: 10px;
+    flex-direction: column;
+    display: flex;
+    gap: 10px;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    background: #FFFDF8;
+    box-shadow: 0px 0px 1px #59343e;
+}
+
+.container-cuenta-column::-webkit-scrollbar {
+    display: none;
+}
+
+.container-cuenta-row {
+    flex-direction: row;
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+
+.product-cuenta {
+    border-radius: 2px;
+    background: #F2E7CD;
+    font-weight: bold;
+    border: none;
+    flex-grow: 1;
+    box-shadow: 0px 0px 1px #59343e;
+    text-align: center;
+    padding: 5px;
+    height: 100%;
+}
+
+.price-cuenta,
+.simbol,
+.caneca,
+.number {
+    border-radius: 2px;
+    background: #303030;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    box-shadow: 0px 0px 1px #59343e;
+    text-align: center;
+    padding: 3px;
+    height: 100%;
+    color: white;
+    flex-grow: 0;
+}
+
+.caneca {
+    height: 14px;
+    flex-grow: 0;
+}
