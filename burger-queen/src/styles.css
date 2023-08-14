@@ -9,6 +9,7 @@ body {
   background: #303030;
 }
 
+/* Estilos globales de los botones*/
 button {
   border-radius: 5px;
   background: #c1d96c;
@@ -25,6 +26,7 @@ button:hover {
   color: white;
 }
 
+/* Estilos globales de los input*/
 input {
   height: 25px;
   border: none;
