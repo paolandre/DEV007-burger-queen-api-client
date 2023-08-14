@@ -2,28 +2,30 @@
   <div class="fondo-amarillo-login">
     <div class="login-container">
       <img src="./assets/logo.png" alt="logo" class="logo-login" />
-      <form class="caja-negra-login">
+      <form
+        [formGroup]="loginForm"
+        (ngSubmit)="onLogin(loginForm.value)"
+        caja-negra-login
+      >
         <div class="form">
           <input
             type="text"
             placeholder="Correo"
-            name="email"
+            id="email"
             class="form-input"
-            [(ngModel)]="email"
+            formControlName="email"
           />
         </div>
         <div class="form">
           <input
-            type="contraseña"
+            type="password"
             placeholder="Contraseña"
-            name="password"
+            id="password"
             class="form-input"
-            [(ngModel)]="password"
+            formControlName="password"
           />
         </div>
-        <button type="submit" (click)="probar(email, password)">
-          Ingresar
-        </button>
+        <button type="submit">Ingresar</button>
       </form>
     </div>
   </div>
