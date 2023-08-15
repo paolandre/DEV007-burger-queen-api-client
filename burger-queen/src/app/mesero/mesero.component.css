@@ -1,0 +1,323 @@
+/* Contenedor de las cajas derecha e izquierda */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    border-color: white;
+    border: 1px solid #ffffff;
+}
+
+/* Contenedor de la caja izquierda*/
+.cuadro-izquierda {
+    border-radius: 5px;
+    background: #fffdf8;
+    box-shadow: 1px 1px 5px 1px #090909;
+    width: 340px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+/* logo pequeño*/
+.logo-login {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+}
+
+/* botones de desayuno y resto del día*/
+.btn {
+    width: 100px;
+    display: block;
+    font-family: "League Spartan", sans-serif;
+    font-size: 12px;
+}
+
+/* Contenedor de los botones de desayuno y resto del día*/
+.container-buttons {
+    justify-content: flex-start;
+    flex-direction: row;
+    display: flex;
+    gap: 10px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+}
+
+/* Contenedor de los productos quee ve el mesero*/
+.container-products-column {
+    padding-left: 10px;
+    flex-direction: column;
+    display: flex;
+    gap: 10px;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.container-products-column::-webkit-scrollbar {
+    display: none;
+}
+
+/* Filas de los productos quee ve el mesero*/
+.container-products-row {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos del producto*/
+.product {
+    border-radius: 5px;
+    background: #F2E7CD;
+    height: 30px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    width: 70%;
+    box-shadow: 0px 0px 3px #59343e;
+    text-align: center;
+    list-style-type: none;
+    gap: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.product:hover {
+    background: #59343e;
+    color: white;
+}
+
+/* Estilos del precio */
+.price {
+    border-radius: 5px;
+    background: #303030;
+    height: 30px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+    box-shadow: 0px 0px 3px #59343e;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-family: "League Spartan", sans-serif;
+    font-size: 12px;
+}
+
+/* Contenedor amarillo de pedidos listos */
+.cuadros-pedidos-listos {
+    background: #f2a950;
+    margin-top: auto;
+    flex-direction: column;
+    display: flex;
+    gap: 5px;
+    justify-content: flex-start;
+    text-align: center;
+    height: 140px;
+}
+
+/* Titulo de pedidos listos */
+h3 {
+    width: 100%;
+    margin-bottom: -7px;
+    padding-bottom: 8px;
+    font-family: "League Spartan", sans-serif;
+    font-size: 13px;
+}
+
+/*Caja de pedidos listos */
+.column-pedidos-listos {
+    padding: 10px;
+    text-align: center;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Desactiva la barra del scroll */
+.column-pedidos-listos::-webkit-scrollbar {
+    display: none;
+    /* Desactiva el scrollbar en navegadores basados en WebKit (como Chrome y Safari) */
+}
+
+/*  Cada botón de pedido listo */
+.pedido-listo {
+    order: 1;
+    justify-content: center;
+    font-family: "League Spartan", sans-serif;
+    box-shadow: 0px 0px 3px #59343e;
+    font-size: 12px;
+    margin: 5px;
+}
+
+/* ---------------------- CUADRO DE LA DERECHA -------------------*/
+/* Caja amarillo grande de la derecha*/
+.cuadro-derecha {
+    border-radius: 5px;
+    background: #f2a950;
+    box-shadow: 1px 1px 5px 1px #090909;
+    width: 340px;
+    height: 500px;
+    flex-direction: column;
+}
+
+/* Caja donde están todos los elementos de la derecha*/
+.subcontenedor-derecho {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 80px;
+}
+
+/* Caja donde están los simbolos, precio, producto, botón eliminar*/
+.container-cuenta-column {
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    background: #FFFDF8;
+    box-shadow: 0px 0px 1px #59343e;
+    width: 90%;
+    height: 250px;
+    box-shadow: 0px 0px 3px #59343e;
+    padding-bottom: 10px;
+}
+
+/* Esconde la barra del scroll */
+.container-cuenta-column::-webkit-scrollbar {
+    display: none;
+}
+
+/* Caja donde están los simbolos, precio, producto, botón eliminar (filas)*/
+.container-cuenta-row {
+    display: flex;
+    gap: 3px;
+    padding: 0px 5px;
+}
+
+/* Container titulo*/
+.total-cuenta-titulo {
+    text-align: center;
+    width: 90%;
+    margin-bottom: -13px;
+}
+
+/* Texto titulo*/
+.total-cuenta {
+    border-radius: 1px;
+    background: #303030;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0px 0px 3px #59343e;
+    color: white;
+    font-family: "League Spartan", sans-serif;
+    font-size: 13px;
+    width: 100%;
+    padding: 5px 0px;
+}
+
+/* Cotenedor de caja negra y beige de la  suma de la cuenta*/
+.suma-cuenta {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    padding: 5px 0px;
+    width: 90%;
+    height: 15px;
+    margin-top: -1px;
+}
+
+/* Caja negra suma total*/
+.total-texto {
+    border-radius: 1px;
+    background: #303030;
+    font-weight: bold;
+    width: 30%;
+    color: white;
+    text-align: center;
+    font-family: "League Spartan", sans-serif;
+    font-size: 12px;
+    padding: 5px;
+    box-shadow: 0px 0px 3px #59343e;
+}
+
+/* Caja beige suma cuenta*/
+.numero-total {
+    border-radius: 1px;
+    background: #F2E7CD;
+    font-weight: bold;
+    width: 70%;
+    color: black;
+    text-align: center;
+    font-family: "League Spartan", sans-serif;
+    font-size: 12px;
+    padding: 5px;
+    box-shadow: 0px 0px 3px #59343e;
+}
+
+/* Contenedor botón cocina*/
+.cocina {
+    display: flex;
+    justify-content: center;
+}
+
+/* Botón cocina*/
+.btn-cocina {
+    width: 100px;
+    display: block;
+    font-family: "League Spartan", sans-serif;
+    font-size: 12px;
+    align-self: center;
+    margin-top: 10px;
+    font-weight: bold;
+    box-shadow: 0px 0px 3px #59343e;
+}
+
+/* Nombre del producto de la caja derecha*/
+.product-cuenta {
+    border-radius: 1px;
+    background: #F2E7CD;
+    font-weight: bold;
+    border: none;
+    flex-grow: 1;
+    text-align: center;
+    padding: 5px;
+    box-shadow: 0px 0px 3px #59343e;
+    margin: 0px;
+    margin-top: 10px;
+}
+
+/* Precios, simbolos, caneca de la caja derecha*/
+.price-cuenta,
+.simbol,
+.caneca,
+.number,
+.caneca {
+    border-radius: 1px;
+    background: #303030;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 5px;
+    color: white;
+    box-shadow: 0px 0px 3px #59343e;
+    margin: 0px;
+    margin-top: 10px;
+}
+
+.number,
+.price-cuenta {
+    cursor: auto;
+}

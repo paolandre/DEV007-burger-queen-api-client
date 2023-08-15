@@ -13,8 +13,6 @@ export class LoginComponent {
     password: new FormControl('', Validators.required),
   });
 
-  // isLoggedIn = false;
-  // userInfo: any = {};
   constructor(private consumirApi: ConsumirApiService) {}
 
   onLogin(form: any) {
@@ -23,31 +21,33 @@ export class LoginComponent {
       console.log(data);
     });
   }
-  // Almacenar el token u otros datos relevantes del token en el local storage o cookies si es necesario
-  //       console.log(response);
-  //       this.isLoggedIn = true;
-  //       this.getUserInfo();
-  //     },
-  //     (error) => {
-  //       console.error('Error al iniciar sesión:', error);
-  //     }
-  //   );
-  // }
-  //   getUserInfo() {
-  //     this.consumirApi.getUserInfo().subscribe(
-  //       (response) => {
-  //         this.userInfo = response;
-  //       },
-  //       (error) => {
-  //         console.error('Error al obtener información del usuario:', error);
-  //       }
-  //     );
-  //   }
-  // }
-
-  // logout() {
-  //   // Realiza las acciones necesarias para cerrar sesión en tu API
-  //   this.isLoggedIn = false;
-  //   this.userInfo = {};
-  //
 }
+// isLoggedIn = false;
+// userInfo: any = {};
+// Almacenar el token u otros datos relevantes del token en el local storage o cookies si es necesario
+//       console.log(response);
+//       this.isLoggedIn = true;
+//       this.getUserInfo();
+//     },
+//     (error) => {
+//       console.error('Error al iniciar sesión:', error);
+//     }
+//   );
+// }
+//   getUserInfo() {
+//     this.consumirApi.getUserInfo().subscribe(
+//       (response) => {
+//         this.userInfo = response;
+//       },
+//       (error) => {
+//         console.error('Error al obtener información del usuario:', error);
+//       }
+//     );
+//   }
+// }
+
+// logout() {
+//   // Realiza las acciones necesarias para cerrar sesión en tu API
+//   this.isLoggedIn = false;
+//   this.userInfo = {};
+//

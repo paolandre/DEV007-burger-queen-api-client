@@ -3,6 +3,7 @@
     <div class="login-container">
       <img src="./assets/logo.png" alt="logo" class="logo-login" />
       <form
+        class="caja-negra-login"
         [formGroup]="loginForm"
         (ngSubmit)="onLogin(loginForm.value)"
         caja-negra-login
@@ -25,7 +26,7 @@
             formControlName="password"
           />
         </div>
-        <button type="submit">Ingresar</button>
+        <button type="submit" class="btn">Ingresar</button>
       </form>
     </div>
   </div>
