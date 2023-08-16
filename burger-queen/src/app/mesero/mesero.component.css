@@ -117,7 +117,7 @@
 
 /* Contenedor amarillo de pedidos listos */
 .cuadros-pedidos-listos {
-    background: #f2a950;
+    background: linear-gradient(to left, #f2a950,   #b6c557);
     margin-top: auto;
     flex-direction: column;
     display: flex;
@@ -165,7 +165,7 @@ h3 {
 /* Caja amarillo grande de la derecha*/
 .cuadro-derecha {
     border-radius: 5px;
-    background: #f2a950;
+    background: linear-gradient(to right, #f2a950,   #b6c557);
     box-shadow: 1px 1px 5px 1px #090909;
     width: 340px;
     height: 500px;
