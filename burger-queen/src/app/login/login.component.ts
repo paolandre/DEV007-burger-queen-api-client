@@ -16,15 +16,15 @@ export class LoginComponent {
     password: new FormControl('', Validators.required),
   });
 
-  constructor(private consumirApi: ConsumirApiService, private router:Router) {}
+  constructor(private consumirApi: ConsumirApiService, private router: Router) { }
 
   onLogin(form: any) {
     console.log(form);
     this.consumirApi.login(form).subscribe((data) => {
-      let dataResponse:ResponceI = data;
-      if(dataResponse.accessToken){
-      localStorage.setItem("token", dataResponse.accessToken);
-      this.router.navigate(['mesero'])
+      let dataResponse: ResponceI = data;
+      if (dataResponse.user.role == "mesero") {
+        localStorage.setItem("token", dataResponse.accessToken);
+        this.router.navigate(['mesero'])
       }
       console.log(data);
     });
