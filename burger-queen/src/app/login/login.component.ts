@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ConsumirApiService } from '../service/consumir-api.service';
 import { LoginI } from '../interfaces/loginI';
+import { Router } from '@angular/router';
+import { ResponceI } from '../interfaces/respondeI';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,11 +16,16 @@ export class LoginComponent {
     password: new FormControl('', Validators.required),
   });
 
-  constructor(private consumirApi: ConsumirApiService) {}
+  constructor(private consumirApi: ConsumirApiService, private router:Router) {}
 
   onLogin(form: any) {
     console.log(form);
     this.consumirApi.login(form).subscribe((data) => {
+      let dataResponse:ResponceI = data;
+      if(dataResponse.accessToken){
+      localStorage.setItem("token", dataResponse.accessToken);
+      this.router.navigate(['mesero'])
+      }
       console.log(data);
     });
   }

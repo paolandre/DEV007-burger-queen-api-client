@@ -8,9 +8,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MeseroComponent } from './mesero/mesero.component';
+import { ErrorModalComponent } from './error-modal/error-modal.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, MeseroComponent],
+  declarations: [AppComponent, LoginComponent, MeseroComponent, ErrorModalComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
