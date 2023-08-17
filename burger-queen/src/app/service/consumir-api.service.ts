@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
@@ -21,6 +21,14 @@ export class ConsumirApiService {
         return throwError(error); // Transforma el error en un Observable de error
       })
     );
+  }
+  getOrders(): Observable<any>{
+    let direcction = this.apiUrl + '/orders';
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    })
+  return this.http.get(direcction, {headers:headers})
   }
   // getUserInfo(): Observable<any> {
   //   return this.http.get(`${this.apiUrl}/user-info`);

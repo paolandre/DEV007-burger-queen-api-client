@@ -6,29 +6,9 @@
             <button class="btn">Resto del día</button>
         </div>
         <div class="container-products-column">
-            <div class="container-products-row">
-                <p class="product">Café americano</p>
-                <p class="price">$12</p>
-            </div>
-            <div class="container-products-row">
-                <p class="product">Huevos</p>
-                <p class="price">$12</p>
-            </div>
-            <div class="container-products-row">
-                <p class="product">Huevos</p>
-                <p class="price">$12</p>
-            </div>
-            <div class="container-products-row">
-                <p class="product">Huevos</p>
-                <p class="price">$12</p>
-            </div>
-            <div class="container-products-row">
-                <p class="product">Huevos</p>
-                <p class="price">$12</p>
-            </div>
-            <div class="container-products-row">
-                <p class="product">Huevos</p>
-                <p class="price">$12</p>
+            <div class="container-products-row" *ngFor="let item of list">
+                <p class="product">{{item?.client}}</p>
+                <p class="price">{{item?.status}}</p>
             </div>
         </div>
         <div class="cuadros-pedidos-listos">

@@ -9,9 +9,11 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MeseroComponent } from './mesero/mesero.component';
 import { ModalComponent } from './error-modal/error-modal.component';
+import { ButtonComponent } from './components/atoms/button/button.component';
+
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, MeseroComponent, ModalComponent],
+  declarations: [AppComponent, LoginComponent, MeseroComponent, ModalComponent, ButtonComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
