@@ -10,7 +10,7 @@ import { ResponceI } from '../interfaces/respondeI';
   providedIn: 'root',
 })
 export class ConsumirApiService {
-  private apiUrl: string = 'https://virtserver.swaggerhub.com/ssinuco/BurgerQueenAPI/2.0.0';
+  private apiUrl: string = 'http://127.0.0.1:8080';
   constructor(private http: HttpClient) {}
 
   login(form: LoginI): Observable<ResponceI> {

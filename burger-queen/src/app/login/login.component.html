@@ -28,8 +28,8 @@
         </div>
         <button type="submit" class="btn">Ingresar</button>
       </form>
-      <error-modal #errorModal></error-modal>
-      <button type="button" class="btn" (click) = "errorModal.show()">Ingresar</button>
+      <dialog #dialog><error-modal></error-modal></dialog>
+      <button type="button" class="btn" (click) = "dialog.showModal()">Ingresar</button>
     </div>
   </div>
 </div>

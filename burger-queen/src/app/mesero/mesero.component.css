@@ -117,7 +117,7 @@
 
 /* Contenedor amarillo de pedidos listos */
 .cuadros-pedidos-listos {
-    background: linear-gradient(to left, #f2a950,   #b6c557);
+    background: linear-gradient(to left, #f2a950, #b6c557);
     margin-top: auto;
     flex-direction: column;
     display: flex;
@@ -165,9 +165,9 @@ h3 {
 /* Caja amarillo grande de la derecha*/
 .cuadro-derecha {
     border-radius: 5px;
-    background: linear-gradient(to right, #f2a950,   #b6c557);
+    background: linear-gradient(to right, #f2a950, #b6c557);
     box-shadow: 1px 1px 5px 1px #090909;
-    width: 340px;
+    width: 380px;
     height: 500px;
     flex-direction: column;
 }
@@ -188,7 +188,7 @@ h3 {
     scrollbar-width: none;
     background: #FFFDF8;
     box-shadow: 0px 0px 1px #59343e;
-    width: 90%;
+    width: 85%;
     height: 250px;
     box-shadow: 0px 0px 3px #59343e;
     padding-bottom: 10px;
@@ -209,7 +209,7 @@ h3 {
 /* Container titulo*/
 .total-cuenta-titulo {
     text-align: center;
-    width: 90%;
+    width: 85%;
     margin-bottom: -13px;
 }
 
@@ -217,7 +217,7 @@ h3 {
 .total-cuenta {
     border-radius: 1px;
     background: #303030;
-    font-weight: bold;
+    font-weight: 500;
     border: none;
     box-shadow: 0px 0px 3px #59343e;
     color: white;
@@ -233,7 +233,7 @@ h3 {
     display: flex;
     align-items: center;
     padding: 5px 0px;
-    width: 90%;
+    width: 85%;
     height: 15px;
     margin-top: -1px;
 }
