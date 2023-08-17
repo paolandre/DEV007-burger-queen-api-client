@@ -22,6 +22,8 @@ export class LoginComponent {
     console.log(form);
     this.consumirApi.login(form).subscribe((data) => {
       let dataResponse: ResponceI = data;
+      console.log(data, 1111);
+
       if (dataResponse.user.role == "mesero") {
         localStorage.setItem("token", dataResponse.accessToken);
         this.router.navigate(['mesero'])
