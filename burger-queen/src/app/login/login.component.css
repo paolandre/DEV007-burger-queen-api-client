@@ -11,7 +11,7 @@
 /* Fondo de amarillo del login*/
 .fondo-amarillo-login {
   border-radius: 5px;
-  background: linear-gradient(to bottom left, #b6c557, #f2a950 );
+  background: linear-gradient(to bottom left, #b6c557, #f2a950);
   box-shadow: 1px 1px 5px 1px #090909;
   padding: 30px;
   width: 310px;
