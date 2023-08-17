@@ -1,12 +1,13 @@
-<div class="modal-container">
-    <div class="modal">
-      <div class="modal-header">
-        <h2>Modal Title</h2>
-        <span class="close-button">&times;</span>
-      </div>
-      <div class="modal-content">
-        <p>This is the modal content.</p>
-      </div>
-    </div>
+<dialog #dialog>
+  <div class="container1">
+  <div class="container2">
+    Error al iniciar sesión
   </div>
-  
+  <div>
+    <button (click)="dialog.close()">OK</button>
+  </div>
+</div>
+</dialog>
+
+<button (click)="dialog.showModal()">Modal</button>
+
