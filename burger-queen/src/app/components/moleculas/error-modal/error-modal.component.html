@@ -1,8 +1,9 @@
+<dialog #dialog>
   <div class="container1">
-  <div class="container2">
-    Error al iniciar sesión
-    <botoncin #cerrar text="X" (click)=onCloseModal()></botoncin>
+    <div class="container2">
+      Error al iniciar sesión
+    </div>
+    <button #cerrar (click)=dialog.close()>X</button>
 
   </div>
-</div>
-
+</dialog>

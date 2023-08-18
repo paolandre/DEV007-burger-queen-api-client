@@ -4,6 +4,7 @@ import { ConsumirApiService } from '../service/consumir-api.service';
 import { LoginI } from '../interfaces/loginI';
 import { Router } from '@angular/router';
 import { ResponceI } from '../interfaces/respondeI';
+import { ModalComponent } from '../components/moleculas/error-modal/error-modal.component';
 
 @Component({
   selector: 'app-login',

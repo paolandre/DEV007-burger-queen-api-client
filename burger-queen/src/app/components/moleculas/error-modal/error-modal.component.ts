@@ -9,7 +9,7 @@ export class ModalComponent {
   @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();
 
   onCloseModal(): void {
-    alert('cierrala')
+    //alert('cierrala')
     this.closeModal.emit();
   }
 }
