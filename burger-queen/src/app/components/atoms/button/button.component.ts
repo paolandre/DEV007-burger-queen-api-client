@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-
 @Component({
   selector: 'botoncin',
   templateUrl: './button.component.html',
@@ -7,5 +6,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ButtonComponent {
   @Input() text : string = 'botoncito';
-  
+
+
 }

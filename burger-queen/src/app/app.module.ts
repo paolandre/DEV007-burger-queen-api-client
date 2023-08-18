@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MeseroComponent } from './mesero/mesero.component';
-import { ModalComponent } from './error-modal/error-modal.component';
+import { ModalComponent } from './components/moleculas/error-modal/error-modal.component';
 import { ButtonComponent } from './components/atoms/button/button.component';
 
 
