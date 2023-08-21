@@ -8,10 +8,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MeseroComponent } from './mesero/mesero.component';
-import { ErrorModalComponent } from './error-modal/error-modal.component';
+import { ModalComponent } from './error-modal/error-modal.component';
+import { ButtonComponent } from './components/atoms/button/button.component';
+
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, MeseroComponent, ErrorModalComponent],
+  declarations: [AppComponent, LoginComponent, MeseroComponent, ModalComponent, ButtonComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

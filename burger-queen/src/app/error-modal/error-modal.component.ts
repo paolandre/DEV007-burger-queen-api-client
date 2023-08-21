@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-error-modal',
+  selector: 'error-modal',
   templateUrl: './error-modal.component.html',
   styleUrls: ['./error-modal.component.css']
 })
-export class ErrorModalComponent {
+export class ModalComponent {
+  @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();
 
+  onCloseModal(): void {
+    this.closeModal.emit();
+  }
 }
