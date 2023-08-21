@@ -6,7 +6,6 @@
     height: 100vh;
     margin: 0;
     border-color: white;
-    border: 1px solid #ffffff;
 }
 
 /* Contenedor de la caja izquierda*/
@@ -19,146 +18,8 @@
     display: flex;
     flex-direction: column;
     z-index: 1;
-}
-
-/* logo pequeño*/
-.logo-login {
-    width: 80px;
-    height: 80px;
-    padding: 10px;
-}
-
-/* botones de desayuno y resto del día*/
-.btn {
-    width: 100px;
-    display: block;
-    font-family: "League Spartan", sans-serif;
-    font-size: 12px;
-}
-
-/* Contenedor de los botones de desayuno y resto del día*/
-.container-buttons {
-    justify-content: flex-start;
-    flex-direction: row;
-    display: flex;
-    gap: 10px;
-    padding-left: 10px;
-    padding-bottom: 20px;
-}
-
-/* Contenedor de los productos quee ve el mesero*/
-.container-products-column {
-    padding-left: 10px;
-    flex-direction: column;
-    display: flex;
-    gap: 10px;
-    overflow: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    padding-top: 3px;
-    padding-bottom: 3px;
-}
-
-.container-products-column::-webkit-scrollbar {
-    display: none;
-}
-
-/* Filas de los productos quee ve el mesero*/
-.container-products-row {
-    flex-direction: row;
-    display: flex;
-    align-items: center;
-}
-
-/* Estilos del producto*/
-.product {
-    border-radius: 5px;
-    background: #F2E7CD;
-    height: 30px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    width: 70%;
-    box-shadow: 0px 0px 3px #59343e;
-    text-align: center;
-    list-style-type: none;
-    gap: 10px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
-
-.product:hover {
-    background: #59343e;
-    color: white;
-}
-
-/* Estilos del precio */
-.price {
-    border-radius: 5px;
-    background: #303030;
-    height: 30px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    width: 25%;
-    box-shadow: 0px 0px 3px #59343e;
-    color: white;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    font-family: "League Spartan", sans-serif;
-    font-size: 12px;
-}
-
-/* Contenedor amarillo de pedidos listos */
-.cuadros-pedidos-listos {
-    background: linear-gradient(to left, #f2a950, #b6c557);
-    margin-top: auto;
-    flex-direction: column;
-    display: flex;
-    gap: 5px;
-    justify-content: flex-start;
-    text-align: center;
-    height: 140px;
-}
-
-/* Titulo de pedidos listos */
-h3 {
-    width: 100%;
-    margin-bottom: -7px;
-    padding-bottom: 8px;
-    font-family: "League Spartan", sans-serif;
-    font-size: 13px;
-}
-
-/*Caja de pedidos listos */
-.column-pedidos-listos {
-    padding: 10px;
-    text-align: center;
-    overflow: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-/* Desactiva la barra del scroll */
-.column-pedidos-listos::-webkit-scrollbar {
-    display: none;
-    /* Desactiva el scrollbar en navegadores basados en WebKit (como Chrome y Safari) */
-}
-
-/*  Cada botón de pedido listo */
-.pedido-listo {
-    order: 1;
-    justify-content: center;
-    font-family: "League Spartan", sans-serif;
-    box-shadow: 0px 0px 3px #59343e;
-    font-size: 12px;
-    margin: 5px;
+    position: relative;
+    /* Agregar posición relativa para controlar la posición del hijo absoluto */
 }
 
 /* ---------------------- CUADRO DE LA DERECHA -------------------*/
@@ -301,9 +162,7 @@ h3 {
 /* Precios, simbolos, caneca de la caja derecha*/
 .price-cuenta,
 .simbol,
-.caneca,
-.number,
-.caneca {
+.number {
     border-radius: 1px;
     background: #303030;
     font-weight: bold;

@@ -3,15 +3,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
-import { LoginI } from '../interfaces/loginI';
-import { ResponceI } from '../interfaces/respondeI';
+import { LoginI } from '../shared-components/interfaces/loginI';
+import { ResponceI } from '../shared-components/interfaces/respondeI';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ConsumirApiService {
   private apiUrl: string = 'http://127.0.0.1:8080';
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   login(form: LoginI): Observable<ResponceI> {
     let direcction = this.apiUrl + '/login';
@@ -22,13 +22,13 @@ export class ConsumirApiService {
       })
     );
   }
-  getOrders(): Observable<any>{
+  getOrders(): Observable<any> {
     let direcction = this.apiUrl + '/orders';
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${localStorage.getItem('token')}`
     })
-  return this.http.get(direcction, {headers:headers})
+    return this.http.get(direcction, { headers: headers })
   }
   // getUserInfo(): Observable<any> {
   //   return this.http.get(`${this.apiUrl}/user-info`);

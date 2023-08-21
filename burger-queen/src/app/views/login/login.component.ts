@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ConsumirApiService } from '../service/consumir-api.service';
-import { LoginI } from '../interfaces/loginI';
+import { ConsumirApiService } from '../../service/consumir-api.service';
+import { LoginI } from '../../shared-components/interfaces/loginI';
 import { Router } from '@angular/router';
-import { ResponceI } from '../interfaces/respondeI';
+import { ResponceI } from '../../shared-components/interfaces/respondeI';
 
 @Component({
   selector: 'app-login',
