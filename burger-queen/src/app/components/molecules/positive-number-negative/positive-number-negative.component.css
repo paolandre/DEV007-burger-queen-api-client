@@ -1,12 +1,21 @@
-.caneca {
+/* Precios, simbolos, caneca de la caja derecha*/
+.simbol,
+.number {
     border-radius: 1px;
     background: #303030;
     font-weight: bold;
     border: none;
     cursor: pointer;
     text-align: center;
-    padding: 3px;
+    padding: 5px;
     color: white;
     box-shadow: 0px 0px 3px #59343e;
     margin: 0px;
+    display: inline-block;
+    margin-left: 3px;
+
+}
+
+.number {
+    cursor: auto;
 }

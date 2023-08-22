@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./waiter.component.css']
 })
 export class WaiterComponent {
+  specificStyleProduct: boolean = true;
 }

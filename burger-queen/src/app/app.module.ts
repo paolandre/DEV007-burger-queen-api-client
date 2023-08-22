@@ -15,6 +15,12 @@ import { LogoComponent } from './components/atoms/small-logo/logo.component';
 import { TwoButtonsComponent } from './components/molecules/two-buttons/two-buttons.component';
 import { ContainerProductPriceComponent } from './components/molecules/container-product-price/container-product-price.component';
 import { OrdersReadyComponent } from './components/molecules/orders-ready/orders-ready.component';
+import { TotalBillAmountTitle } from './components/molecules/total-bill-amount-title/total-bill-amount.component';
+import { PositiveNumberNegative } from './components/molecules/positive-number-negative/positive-number-negative.component';
+import { ProductComponent } from './components/atoms/product/product.component';
+import { PriceComponent } from './components/atoms/price/price.component';
+import { KitchenButtonComponent } from './components/atoms/kitchen-button/kitchen-button.component';
+import { TotalBillSum } from './components/molecules/total-bill-sum/total-bill-sum.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +33,13 @@ import { OrdersReadyComponent } from './components/molecules/orders-ready/orders
     LogoComponent,
     TwoButtonsComponent,
     ContainerProductPriceComponent,
-    OrdersReadyComponent
+    OrdersReadyComponent,
+    PositiveNumberNegative,
+    TotalBillAmountTitle,
+    ProductComponent,
+    PriceComponent,
+    KitchenButtonComponent,
+    TotalBillSum
   ],
 
   imports: [
