@@ -1,0 +1,39 @@
+/*Suma total de la cuenta de la vista del mesero*/
+/* Cotenedor de caja negra y beige de la  suma de la cuenta*/
+.suma-cuenta {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    padding: 5px 0px;
+    width: 322px;
+    height: 15px;
+    margin-top: -1px;
+}
+
+/* Caja negra suma total*/
+.total-texto {
+    border-radius: 1px;
+    background: #303030;
+    font-weight: bold;
+    width: 30%;
+    color: white;
+    text-align: center;
+    font-family: "League Spartan", sans-serif;
+    font-size: 12px;
+    padding: 5px;
+    box-shadow: 0px 0px 3px #59343e;
+}
+
+/* Caja beige suma cuenta*/
+.numero-total {
+    border-radius: 1px;
+    background: #F2E7CD;
+    font-weight: bold;
+    width: 70%;
+    color: black;
+    text-align: center;
+    font-family: "League Spartan", sans-serif;
+    font-size: 12px;
+    padding: 5px;
+    box-shadow: 0px 0px 3px #59343e;
+}

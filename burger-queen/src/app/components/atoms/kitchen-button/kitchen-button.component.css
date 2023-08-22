@@ -1,0 +1,17 @@
+/* Contenedor botón cocina*/
+.cocina {
+    display: flex;
+    justify-content: center;
+}
+
+/* Botón cocina*/
+.btn-cocina {
+    width: 100px;
+    display: block;
+    font-family: "League Spartan", sans-serif;
+    font-size: 12px;
+    align-self: center;
+    margin-top: 10px;
+    font-weight: bold;
+    box-shadow: 0px 0px 3px #59343e;
+}

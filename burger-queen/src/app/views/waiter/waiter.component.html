@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="cuadro-izquierda">
+        <app-logo></app-logo>
+        <app-two-buttons></app-two-buttons>
+        <app-container-product-price></app-container-product-price>
+        <app-orders-ready></app-orders-ready>
+    </div>
+    <div class="cuadro-derecha">
+        <div class="subcontenedor-derecho">
+            <app-total-bill-amount-title></app-total-bill-amount-title>
+            <div class="container-cuenta-column">
+                <div class="container-cuenta-row">
+                    <app-positive-number-negative></app-positive-number-negative>
+                    <app-product [class.specificStyleProduct]="specificStyleProduct"></app-product>
+                    <app-price></app-price>
+                    <app-trash></app-trash>
+                </div>
+            </div>
+            <app-total-bill-sum></app-total-bill-sum>
+            <app-kitchen-button></app-kitchen-button>
+        </div>
+    </div>
+</div>
