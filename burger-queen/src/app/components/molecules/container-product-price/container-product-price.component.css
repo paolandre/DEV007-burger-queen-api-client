@@ -1,4 +1,4 @@
-/* Contenedor de los productos quee ve el mesero*/
+/* Contenedor de los productos que ve el mesero al lado izquierdo*/
 .container-products-column {
     padding-left: 10px;
     flex-direction: column;

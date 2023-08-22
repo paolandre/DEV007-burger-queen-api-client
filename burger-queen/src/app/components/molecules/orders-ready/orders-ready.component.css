@@ -1,4 +1,4 @@
-/* Contenedor amarillo de pedidos listos */
+/* Contenedor amarillo de pedidos listos de la vista del mesero*/
 .cuadros-pedidos-listos {
     background: linear-gradient(to left, #f2a950, #b6c557);
     flex-direction: column;
