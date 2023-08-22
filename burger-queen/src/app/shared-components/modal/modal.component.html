@@ -1,0 +1,9 @@
+<div class="modal-overlay" *ngIf="showModal">
+    <div class="modal-blur"></div>
+    <div class="modal-wrapper">
+        <div class="modal-content">
+            <p>Error al ingresar las credenciales. Por favor, inténtelo nuevamente.</p>
+        </div>
+        <button (click)="closeModal()">x</button>
+    </div>
+</div>

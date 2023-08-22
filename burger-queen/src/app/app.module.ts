@@ -21,6 +21,7 @@ import { ProductComponent } from './components/atoms/product/product.component';
 import { PriceComponent } from './components/atoms/price/price.component';
 import { KitchenButtonComponent } from './components/atoms/kitchen-button/kitchen-button.component';
 import { TotalBillSum } from './components/molecules/total-bill-sum/total-bill-sum.component';
+import { ModalComponentDos } from './shared-components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { TotalBillSum } from './components/molecules/total-bill-sum/total-bill-s
     ProductComponent,
     PriceComponent,
     KitchenButtonComponent,
-    TotalBillSum
+    TotalBillSum,
+    ModalComponentDos
   ],
 
   imports: [

@@ -4,13 +4,17 @@ import { ConsumirApiService } from '../../service/consumir-api.service';
 import { LoginI } from '../../shared-components/interfaces/loginI';
 import { Router } from '@angular/router';
 import { ResponceI } from '../../shared-components/interfaces/respondeI';
+import { ModalComponentDos } from '../../shared-components/modal/modal.component';
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
+
 export class LoginComponent {
+  @ViewChild('modal') modal!: ModalComponentDos;
   loginForm = new FormGroup({
     email: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
