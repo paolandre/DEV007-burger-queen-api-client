@@ -1,22 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'app-modal-dos',
-    templateUrl: './modal.component.html',
-    styleUrls: ['./modal.component.css']
+  selector: 'app-modal',
+  templateUrl: './modal.component.html',
+  styleUrls: ['./modal.component.css'],
 })
-export class ModalComponentDos {
+export class ModalComponent {
+  @Input() childMessage: string = '';
+  showModal: boolean = false;
 
-    showModal: boolean = false;
+  constructor() {}
 
-    constructor() { }
+  openModal() {
+    this.showModal = true;
+  }
 
-    openModal() {
-        this.showModal = true;
-    }
-
-    closeModal() {
-        this.showModal = false;
-    }
-
+  closeModal() {
+    this.showModal = false;
+  }
 }

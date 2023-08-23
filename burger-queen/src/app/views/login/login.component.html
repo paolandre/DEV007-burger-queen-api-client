@@ -2,19 +2,33 @@
   <div class="fondo-amarillo-login">
     <div class="login-container">
       <img src="./assets/logo.png" alt="logo" class="logo-login" />
-      <form class="caja-negra-login" [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)" caja-negra-login>
+      <form
+        class="caja-negra-login"
+        [formGroup]="loginForm"
+        (ngSubmit)="onLogin(loginForm.value)"
+        caja-negra-login
+      >
         <div class="form">
-          <input type="text" placeholder="Correo" id="email" class="form-input" formControlName="email" />
+          <input
+            type="text"
+            placeholder="Correo"
+            id="email"
+            class="form-input"
+            formControlName="email"
+          />
         </div>
         <div class="form">
-          <input type="password" placeholder="Contraseña" id="password" class="form-input" formControlName="password" />
+          <input
+            type="password"
+            placeholder="Contraseña"
+            id="password"
+            class="form-input"
+            formControlName="password"
+          />
         </div>
         <button type="submit" class="btn">Ingresar</button>
       </form>
-      <dialog #dialog><error-modal></error-modal></dialog>
-      <botoncin text="botoncin"></botoncin>
     </div>
-    <app-modal-dos #modal></app-modal-dos>
-    <button (click)="modal.openModal()">Hola</button>
+    <app-modal #modal [childMessage]="errorMessage"></app-modal>
   </div>
 </div>
