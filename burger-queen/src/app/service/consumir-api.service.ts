@@ -24,7 +24,7 @@ export class ConsumirApiService {
     );
   }
   getOrders(): Observable<any> {
-    let direcction = this.apiUrl + '/orders';
+    let direcction = this.apiUrl + '/products';
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: `Bearer ${localStorage.getItem('token')}`,
