@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './views/login/login.component';
 import { WaiterComponent } from './views/waiter/waiter.component';
-import { ModalComponent } from './shared-components/error-modal/error-modal.component';
 import { ButtonComponent } from './components/atoms/button/button.component';
 import { TrashComponent } from './components/atoms/trash-icon/trash.component';
 import { LogoComponent } from './components/atoms/small-logo/logo.component';
@@ -21,14 +20,13 @@ import { ProductComponent } from './components/atoms/product/product.component';
 import { PriceComponent } from './components/atoms/price/price.component';
 import { KitchenButtonComponent } from './components/atoms/kitchen-button/kitchen-button.component';
 import { TotalBillSum } from './components/molecules/total-bill-sum/total-bill-sum.component';
-import { ModalComponentDos } from './shared-components/modal/modal.component';
+import { ModalComponent } from './shared-components/modal/modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     WaiterComponent,
-    ModalComponent,
     ButtonComponent,
     TrashComponent,
     LogoComponent,
@@ -41,7 +39,7 @@ import { ModalComponentDos } from './shared-components/modal/modal.component';
     PriceComponent,
     KitchenButtonComponent,
     TotalBillSum,
-    ModalComponentDos
+    ModalComponent,
   ],
 
   imports: [
@@ -50,8 +48,8 @@ import { ModalComponentDos } from './shared-components/modal/modal.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-  ], //Agrega el modulos del formulario // Agrega httpClientModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
