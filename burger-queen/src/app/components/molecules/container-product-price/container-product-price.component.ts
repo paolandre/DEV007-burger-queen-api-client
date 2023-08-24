@@ -1,21 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ConsumirApiService } from '../../../service/consumir-api.service';
 
 @Component({
-    selector: 'app-container-product-price',
-    templateUrl: './container-product-price.component.html',
-    styleUrls: ['./container-product-price.component.css']
+  selector: 'app-container-product-price',
+  templateUrl: './container-product-price.component.html',
+  styleUrls: ['./container-product-price.component.css'],
 })
 export class ContainerProductPriceComponent implements OnInit {
-    list: Array<any> = [];
+  list: Array<any> = [];
+  @Input() momentDay: string = 'Desayuno';
+  constructor(private consumirApi: ConsumirApiService) {}
 
-    constructor(private consumirApi: ConsumirApiService) { }
-
-    ngOnInit(): void {
-        this.consumirApi.getOrders().subscribe((data) => {
-            console.log(data);
-            this.list = data;
-        });
-    }
+  ngOnInit(): void {
+    this.consumirApi.getOrders().subscribe((data) => {
+      console.log(data);
+      this.list = data;
+    });
+  }
 }
-

@@ -3,8 +3,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-waiter',
   templateUrl: './waiter.component.html',
-  styleUrls: ['./waiter.component.css']
+  styleUrls: ['./waiter.component.css'],
 })
 export class WaiterComponent {
   specificStyleProduct: boolean = true;
+  parentMessage: string = 'Desayuno';
 }
