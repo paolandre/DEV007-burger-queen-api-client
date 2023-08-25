@@ -26,7 +26,7 @@ export class LoginComponent {
 
   onLogin(form: any) {
     console.log(form);
-    /*this.consumirApi.login(form).subscribe((resp) => {
+    this.consumirApi.login(form).subscribe((resp) => {
       if (typeof resp === 'string') {
         console.log(resp);
         this.errorMessage = resp;
@@ -46,6 +46,6 @@ export class LoginComponent {
           this.modal.openModal();
         }
       }
-    });*/
+    });
   }
 }
