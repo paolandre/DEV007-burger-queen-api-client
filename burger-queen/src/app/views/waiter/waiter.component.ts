@@ -8,4 +8,17 @@ import { Component } from '@angular/core';
 export class WaiterComponent {
   specificStyleProduct: boolean = true;
   parentMessage: string = 'Desayuno';
+
+  menuAdmin(){
+    alert('funciona')
+  }
+  personalAdmin(){
+    alert('funciona?')
+  }
+  anitaFunction(){
+    alert('hola anita')
+  }
+  andyFunction(){
+    alert('hola andre')
+  }
 }

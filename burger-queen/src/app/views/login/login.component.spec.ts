@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { LoginComponent } from './login.component';
 import { ConsumirApiService } from '../../service/consumir-api.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing'
@@ -6,7 +6,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
-describe('LoginComponent', () => {
+fdescribe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
 
@@ -30,5 +30,14 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should call on login',  fakeAsync( () => {
+    spyOn(component, 'onLogin')
+    const compiled = fixture.debugElement.nativeElement;
+    const button = compiled.querySelector('.btn')
+    button.click();
+    tick()
+    expect(component.onLogin).toHaveBeenCalled()
+
+  }))
 });
 
