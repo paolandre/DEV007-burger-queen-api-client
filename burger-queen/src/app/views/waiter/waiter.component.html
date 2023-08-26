@@ -1,9 +1,12 @@
 <div class="container">
   <div class="cuadro-izquierda">
-    <app-two-buttons-reusable button1="Personal" button2="Menu" [onclick1]="menuAdmin" [onclick2]="personalAdmin"></app-two-buttons-reusable>
-    <app-two-buttons-reusable button1="Anita" button2="Andreita" [onclick1]="anitaFunction" [onclick2]="andyFunction"></app-two-buttons-reusable>
     <app-logo></app-logo>
-    <app-two-buttons (buttonChange)="parentMessage = $event"></app-two-buttons>
+    <app-two-buttons
+      button1="Desayuno"
+      button2="Almuerzo"
+      [onclick1]="onclickBreackfast.bind(this)"
+      [onclick2]="onclickLunch.bind(this)"
+    ></app-two-buttons>
     <app-container-product-price
       [momentDay]="parentMessage"
     ></app-container-product-price>

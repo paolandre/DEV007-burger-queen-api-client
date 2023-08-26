@@ -8,7 +8,11 @@ import { ConsumirApiService } from '../../../service/consumir-api.service';
 })
 export class ContainerProductPriceComponent implements OnInit {
   list: Array<any> = [];
-  @Input() momentDay: string = 'Desayuno';
+  @Input() momentDay: string = '';
+  /* set momentDay(val: string) {
+    debugger;
+    this._momentDay = val.toUpperCase();
+  } */
   constructor(private consumirApi: ConsumirApiService) {}
 
   ngOnInit(): void {

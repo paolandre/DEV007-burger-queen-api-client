@@ -1,0 +1,7 @@
+/* botones boton general*/
+.btn {
+  width: 100px;
+  display: block;
+  font-family: "League Spartan", sans-serif;
+  font-size: 12px;
+}
