@@ -9,16 +9,12 @@ export class WaiterComponent {
   specificStyleProduct: boolean = true;
   parentMessage: string = 'Desayuno';
 
-  menuAdmin(){
-    alert('funciona')
+  onclickBreackfast() {
+    this.parentMessage = 'Desayuno';
+    console.log(this.parentMessage);
   }
-  personalAdmin(){
-    alert('funciona?')
-  }
-  anitaFunction(){
-    alert('hola anita')
-  }
-  andyFunction(){
-    alert('hola andre')
+  onclickLunch() {
+    this.parentMessage = 'Almuerzo';
+    console.log(this.parentMessage);
   }
 }

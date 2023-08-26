@@ -21,7 +21,6 @@ import { PriceComponent } from './components/atoms/price/price.component';
 import { KitchenButtonComponent } from './components/atoms/kitchen-button/kitchen-button.component';
 import { TotalBillSum } from './components/molecules/total-bill-sum/total-bill-sum.component';
 import { ModalComponent } from './shared-components/modal/modal.component';
-import { TwoButtonsReusableComponent } from './components/molecules/container-product-price/two-buttons-reusable/two-buttons-reusable.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +40,6 @@ import { TwoButtonsReusableComponent } from './components/molecules/container-pr
     KitchenButtonComponent,
     TotalBillSum,
     ModalComponent,
-    TwoButtonsReusableComponent
   ],
 
   imports: [
