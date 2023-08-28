@@ -6,7 +6,11 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./modal.component.css'],
 })
 export class ModalComponent {
+  @Input() childTitle: string = '';
   @Input() childMessage: string = '';
+  @Input() childMessage2: string = '';
+  @Input() childMessage3: string = '';
+  @Input() childMessage4: string = '';
   showModal: boolean = false;
 
   constructor() {}

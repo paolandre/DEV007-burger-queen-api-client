@@ -1,66 +1,71 @@
 .modal-overlay {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
 }
 
 .modal-blur {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(5px);
-    z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: -1;
 }
 
 /* Div padre con el efecto de borde de gradiente */
 .modal-wrapper {
-    position: relative;
-    display: inline-block;
-    padding: 10px;
-    background: linear-gradient(to bottom left, #b6c557, #f2a950);
-    border-radius: 2px;
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  background: linear-gradient(to bottom left, #b6c557, #f2a950);
+  border-radius: 2px;
 }
 
 .modal-content {
-    background-color: #F2E7CD;
-    padding: 20px;
-    border-radius: 2px;
-    max-width: 500px;
-    min-width: 300px;
-    position: relative;
-    z-index: 2;
-    font-family: "League Spartan", sans-serif;
-    font-size: 13px;
-    box-shadow: 0px 1px 3px 1px #59343e;
+  background-color: #f2e7cd;
+  padding: 20px;
+  border-radius: 2px;
+  max-width: 500px;
+  min-width: 300px;
+  position: relative;
+  z-index: 2;
+  font-family: "League Spartan", sans-serif;
+  font-size: 13px;
+  box-shadow: 0px 1px 3px 1px #59343e;
 }
 
 .modal-wrapper button {
-    position: absolute;
-    right: 10px;
-    z-index: 1;
-    position: absolute;
-    padding: 0px 10px;
-    top: -17px;
-    border: none;
-    background-color: #F25050;
-    font-size: 15px;
-    cursor: pointer;
-    color: white;
-    border-radius: 2px;
-    transition: background-color 0.3s, color 0.3s;
-    box-shadow: 0px 1px 3px 1px #59343e;
-    z-index: 1;
+  position: absolute;
+  right: 10px;
+  z-index: 1;
+  position: absolute;
+  padding: 0px 10px;
+  top: -17px;
+  border: none;
+  background-color: #f25050;
+  font-size: 15px;
+  cursor: pointer;
+  color: white;
+  border-radius: 2px;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 0px 1px 3px 1px #59343e;
+  z-index: 1;
 }
 
 .modal-wrapper button:hover {
-    background-color: #59343e;
+  background-color: #59343e;
+}
+
+.modal-title {
+  display: flex;
+  justify-content: center;
 }

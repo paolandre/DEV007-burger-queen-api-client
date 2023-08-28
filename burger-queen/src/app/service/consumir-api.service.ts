@@ -23,12 +23,45 @@ export class ConsumirApiService {
       })
     );
   }
-  getOrders(): Observable<any> {
+  getProducts(): Observable<any> {
     let direcction = this.apiUrl + '/products';
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: `Bearer ${localStorage.getItem('token')}`,
     });
+    return this.http.get(direcction, { headers: headers });
+  }
+
+  getOrders(): Observable<any> {
+    let direcction = this.apiUrl + '/orders';
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    });
+    return this.http.get(direcction, { headers: headers });
+  }
+
+  changeStatusOrders(id: string): Observable<any> {
+    let direcction = this.apiUrl + '/orders/' + id;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    });
+    const requestData = {
+      status: 'delivered',
+      dateProcessed: new Date(),
+    };
+
+    return this.http.patch(direcction, requestData, { headers: headers });
+  }
+
+  getEspecificOrder(identificador: string): Observable<any> {
+    let direcction = this.apiUrl + '/orders/' + identificador;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    });
+
     return this.http.get(direcction, { headers: headers });
   }
 }

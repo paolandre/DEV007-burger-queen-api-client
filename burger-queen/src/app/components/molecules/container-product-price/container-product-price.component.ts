@@ -16,7 +16,7 @@ export class ContainerProductPriceComponent implements OnInit {
   constructor(private consumirApi: ConsumirApiService) {}
 
   ngOnInit(): void {
-    this.consumirApi.getOrders().subscribe((data) => {
+    this.consumirApi.getProducts().subscribe((data) => {
       console.log(data);
       this.list = data;
     });
