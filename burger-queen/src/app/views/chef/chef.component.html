@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="subcontainer">
+    <div class="white-container">
+      <div class="logo">
+        <label class="label-preparation">Pedidos en preparación</label>
+        <app-logo></app-logo>
+      </div>
+      <div class="titles">
+        <app-total-bill-amount-title
+          title="#"
+          class="little"
+        ></app-total-bill-amount-title>
+        <app-total-bill-amount-title
+          class="little"
+          title="Timer"
+        ></app-total-bill-amount-title>
+        <app-total-bill-amount-title
+          title="Cliente"
+        ></app-total-bill-amount-title>
+        <app-total-bill-amount-title title="Hora"></app-total-bill-amount-title>
+        <app-total-bill-amount-title
+          title="Terminar"
+          class="white"
+        ></app-total-bill-amount-title>
+      </div>
+      <ng-container *ngFor="let order of orders">
+        <div
+          class="container-orders"
+          *ngIf="order?.status === 'pending'"
+          (click)="message(order?.id)"
+        >
+          <app-product
+            class="little"
+            *ngIf="order?.status === 'pending'"
+            product="{{ order?.id }}"
+          ></app-product>
+          <app-product
+            class="little"
+            *ngIf="order?.status === 'pending'"
+            [product]="timer"
+          ></app-product>
+          <app-product
+            *ngIf="order?.status === 'pending'"
+            product="{{ order?.client }}"
+          ></app-product>
+          <app-product
+            *ngIf="order?.status === 'pending'"
+            product="{{ order?.dataEntry }}"
+          ></app-product>
+          <botoncin
+            *ngIf="order?.status === 'pending'"
+            text="Terminar"
+            (click)="onclick(order?.id)"
+            [handleClick]="finishOrder.bind(this)"
+          ></botoncin>
+        </div>
+      </ng-container>
+      <app-modal
+        #modal
+        childTitle="Detalles del pedido"
+        [childMessage]="detailsOrderMessage"
+        [childMessage2]="detailsOrderMessage2"
+        [childMessage3]="detailsOrderMessage3"
+        [childMessage4]="detailsOrderMessage4"
+      ></app-modal>
+    </div>
+  </div>
+</div>

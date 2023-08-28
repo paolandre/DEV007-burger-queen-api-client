@@ -1,74 +1,74 @@
 /* Contenedor de las cajas derecha e izquierda */
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    border-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  border-color: white;
 }
 
 /* Contenedor de la caja izquierda*/
 .cuadro-izquierda {
-    border-radius: 5px;
-    background: #fffdf8;
-    box-shadow: 1px 1px 5px 1px #090909;
-    width: 340px;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    z-index: 1;
-    position: relative;
-    /* Agregar posición relativa para controlar la posición del hijo absoluto */
+  border-radius: 5px;
+  background: #fffdf8;
+  box-shadow: 1px 1px 5px 1px #090909;
+  width: 340px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  position: relative;
+  /* Agregar posición relativa para controlar la posición del hijo absoluto */
 }
 
 /* ---------------------- CUADRO DE LA DERECHA -------------------*/
 /* Caja amarillo grande de la derecha*/
 .cuadro-derecha {
-    border-radius: 5px;
-    background: linear-gradient(to right, #f2a950, #b6c557);
-    box-shadow: 1px 1px 5px 1px #090909;
-    width: 380px;
-    height: 500px;
-    flex-direction: column;
+  border-radius: 5px;
+  background: linear-gradient(to right, #f2a950, #b6c557);
+  box-shadow: 1px 1px 5px 1px #090909;
+  width: 380px;
+  height: 500px;
+  flex-direction: column;
 }
 
 /* Caja donde están todos los elementos de la derecha*/
 .subcontenedor-derecho {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 80px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 80px;
 }
 
 /* Caja donde están los simbolos, precio, producto, botón eliminar*/
 .container-cuenta-column {
-    overflow: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    background: #FFFDF8;
-    box-shadow: 0px 0px 1px #59343e;
-    width: 85%;
-    height: 250px;
-    box-shadow: 0px 0px 3px #59343e;
-    padding-bottom: 10px;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  background: #fffdf8;
+  box-shadow: 0px 0px 1px #59343e;
+  width: 85%;
+  height: 250px;
+  box-shadow: 0px 0px 3px #59343e;
+  padding-bottom: 10px;
 }
 
 /* Esconde la barra del scroll */
 .container-cuenta-column::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* Caja donde están los simbolos, precio, producto, botón eliminar (filas)*/
 .container-cuenta-row {
-    display: flex;
-    gap: 3px;
-    padding: 0px 5px;
-    padding-top: 5px;
+  display: flex;
+  gap: 3px;
+  padding: 0px 5px;
+  padding-top: 5px;
 }
 
 .specificStyleProduct {
-    flex-grow: 1;
-    margin: 0;
+  flex-grow: 1;
+  margin: 0;
 }

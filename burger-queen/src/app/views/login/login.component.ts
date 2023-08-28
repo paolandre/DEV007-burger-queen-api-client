@@ -29,7 +29,7 @@ export class LoginComponent {
     this.consumirApi.login(form).subscribe((resp) => {
       if (typeof resp === 'string') {
         console.log(resp);
-        this.errorMessage = resp;
+        this.errorMessage = 'Error de datos para ingresar';
         this.modal.openModal();
       } else {
         console.log(resp);
@@ -42,8 +42,7 @@ export class LoginComponent {
           this.errorMessage = `Ud. es un administrador, aun no hay una interfaz para Ud.`;
           this.modal.openModal();
         } else if (resp.user.role === 'chef') {
-          this.errorMessage = `Ud. es un chef, aun no hay una interfaz para Ud.`;
-          this.modal.openModal();
+          this.router.navigate(['chef']);
         }
       }
     });

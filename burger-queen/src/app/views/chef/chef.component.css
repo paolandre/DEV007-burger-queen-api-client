@@ -1,0 +1,90 @@
+/* Contenedor de las cajas derecha e izquierda */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  border-color: white;
+}
+
+.subcontainer {
+  border-radius: 2px;
+  background: linear-gradient(to bottom, #b6c557, #f2a950);
+  box-shadow: 1px 1px 5px 1px #090909;
+  width: 580px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Fondo beige*/
+.white-container {
+  width: 550px;
+  height: 320px;
+  border-radius: 2px;
+  background: #fffdf8;
+  box-shadow: 1px 1px 5px 1px #59343e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
+.logo {
+  width: 550px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.label-preparation {
+  display: flex;
+  align-items: center;
+  margin: 30px;
+  padding: 5px;
+  width: 160px;
+  height: 20px;
+  font-size: medium;
+  background-color: #59343e;
+  color: white;
+}
+
+.titles {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  margin-left: 15px;
+  padding: 0px 5px;
+  padding-top: 5px;
+}
+
+app-total-bill-amount-title {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+  margin: 5px;
+}
+
+.white {
+  opacity: 0;
+}
+
+.container-orders {
+  display: flex;
+  gap: 3px;
+  padding: 0px 5px;
+  padding-top: 5px;
+}
+
+app-product {
+  margin-right: 5px;
+  width: 120px;
+}
+.little {
+  width: 70px;
+}
