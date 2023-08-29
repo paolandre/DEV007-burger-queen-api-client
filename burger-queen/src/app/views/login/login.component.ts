@@ -39,8 +39,7 @@ export class LoginComponent {
         if (resp.user.role == 'mesero') {
           this.router.navigate(['waiter']);
         } else if (resp.user.role === 'admin') {
-          this.errorMessage = `Ud. es un administrador, aun no hay una interfaz para Ud.`;
-          this.modal.openModal();
+          this.router.navigate(['admin']);
         } else if (resp.user.role === 'chef') {
           this.router.navigate(['chef']);
         }

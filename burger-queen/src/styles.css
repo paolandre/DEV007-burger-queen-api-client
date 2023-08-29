@@ -11,7 +11,7 @@ body {
 
 /* Estilos globales de los botones*/
 button {
-  border-radius: 5px;
+  border-radius: 3px;
   background: #c1d96c;
   height: 27px;
   font-weight: bold;

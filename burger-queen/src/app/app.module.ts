@@ -22,6 +22,8 @@ import { KitchenButtonComponent } from './components/atoms/kitchen-button/kitche
 import { TotalBillSum } from './components/molecules/total-bill-sum/total-bill-sum.component';
 import { ModalComponent } from './shared-components/modal/modal.component';
 import { ChefComponent } from './views/chef/chef.component';
+import { AdminMenuComponent } from './views/admin-menu/admin-menu.component';
+
 
 @NgModule({
   declarations: [
@@ -42,6 +44,7 @@ import { ChefComponent } from './views/chef/chef.component';
     TotalBillSum,
     ModalComponent,
     ChefComponent,
+    AdminMenuComponent
   ],
 
   imports: [
