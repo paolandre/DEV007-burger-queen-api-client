@@ -8,6 +8,12 @@ import { ModalComponent } from 'src/app/shared-components/modal/modal.component'
     styleUrls: ['./admin-menu.component.css'],
 })
 export class AdminMenuComponent {
+    singleProduct: boolean = true;
+    singleCategory: boolean = true;
+    singlePrice: boolean = true;
+    singleTrash: boolean = true;
+    menu: boolean = true;
+    //Aquí hay que agregar tipados
     @ViewChild('modal') modal!: ModalComponent;
     detailsOrderMessage: string = '';
     detailsOrderMessage2: string = '';
@@ -15,55 +21,81 @@ export class AdminMenuComponent {
     detailsOrderMessage4: string = '';
     orders: Array<any> = [];
     products: Array<any> = [];
+    users: Array<any> = [];
     id: number = 0;
     hora: number = 0;
     minuto: number = 0;
     segundo: number = 0;
     timer: string = `${this.hora}:${this.minuto}:${this.segundo}`;
 
-    constructor(private consumirApi: ConsumirApiService) {}
-    ngOnInit(): void {
-    this.getAllOrders();
-    }
+    constructor(private consumirApi: ConsumirApiService) { }
+    toMenu() {
+        this.menu = true;
+        console.log(this.menu)
 
-    getAllOrders() {
-    this.consumirApi.getOrders().subscribe((data) => {
-        console.log(data);
-        this.orders = data;
-    });
+    }
+    toPersonal() {
+        this.menu = false;
+        console.log(this.menu)
+
+    }
+    ngOnInit(): void {
+        this.getProducts();
+        this.getUsers();
+    }
+    getUsers() {
+        this.consumirApi.getUsers().subscribe((data) => {
+            console.log(data);
+            this.users = data;
+        });
+    }
+    getProducts() {
+        this.consumirApi.getProducts().subscribe((data) => {
+            console.log(data);
+            this.products = data;
+        });
     }
     getOrderForId(id: string) {
-    this.consumirApi.getEspecificOrder(id).subscribe((data) => {
-        console.log(data);
-    });
-    }
-
-    onclick(id: string) {
-    this.consumirApi.changeStatusOrders(id).subscribe((data2) => {
-        console.log(data2);
-        this.getAllOrders();
-    });
-    }
-
-    message(id: string) {
-    this.products = [];
-    this.consumirApi.getEspecificOrder(id).subscribe((data) => {
-        data.products.forEach((element: any) => {
-        this.products.push(`${element.product.name}`);
+        this.consumirApi.getEspecificOrder(id).subscribe((data) => {
+            console.log(data);
         });
-        console.log(this.products);
-        this.detailsOrderMessage = `Cliente: ${data.client}`;
-        this.detailsOrderMessage2 = `Estado: ${data.status}`;
-        this.detailsOrderMessage3 = `Pedido: ${this.products.join('-')}`;
-    });
+    }
+
+    // onclick(id: string) {
+    // this.consumirApi.changeStatusOrders(id).subscribe((data2) => {
+    //     console.log(data2);
+    //     this.getAllOrders();
+    // });
+    // }
+addProduct(){
+    this.detailsOrderMessage = "Pronto podrás añadir un producto";
 
     this.modal.openModal();
+}
+addUser(){
+    this.detailsOrderMessage = "Pronto podrás añadir un usuario";
+
+    this.modal.openModal();
+}
+    message(id: string) {
+        this.products = [];
+        this.consumirApi.getEspecificOrder(id).subscribe((data) => {
+            data.products.forEach((element: any) => {
+                this.products.push(`${element.product.name}`);
+            });
+            console.log(this.products);
+            this.detailsOrderMessage = `Cliente: ${data.client}`;
+            this.detailsOrderMessage2 = `Estado: ${data.status}`;
+            this.detailsOrderMessage3 = `Pedido: ${this.products.join('-')}`;
+        });
+
+        this.modal.openModal();
     }
 
     timerFunction() {
-    setInterval(() => {
-        this.segundo += 1;
-    }, 1000);
+        setInterval(() => {
+            this.segundo += 1;
+        }, 1000);
     }
-    finishOrder() {}
+    finishOrder() { }
 }

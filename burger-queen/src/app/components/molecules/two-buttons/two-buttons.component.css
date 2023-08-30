@@ -1,9 +1,8 @@
 /* Contenedor de los botones de desayuno y resto del día*/
 .container-buttons {
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-direction: row;
   display: flex;
   gap: 10px;
-  padding-left: 10px;
-  padding-bottom: 20px;
+
 }

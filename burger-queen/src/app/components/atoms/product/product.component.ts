@@ -6,5 +6,5 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./product.component.css'],
 })
 export class ProductComponent {
-  @Input() product: string | number = 'Café americano';
+  @Input() product: string | number = '';
 }

@@ -13,8 +13,8 @@ export class ConsumirApiService {
   constructor(private http: HttpClient) {}
 
   login(form: LoginI): Observable<ILoginRes | string> {
-    let direcction = this.apiUrl + '/login';
-    return this.http.post<ILoginRes>(direcction, form).pipe(
+    let url = this.apiUrl + '/login';
+    return this.http.post<ILoginRes>(url, form).pipe(
       map((resp) => {
         return resp;
       }),
@@ -24,25 +24,34 @@ export class ConsumirApiService {
     );
   }
   getProducts(): Observable<any> {
-    let direcction = this.apiUrl + '/products';
+    let url = this.apiUrl + '/products';
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: `Bearer ${localStorage.getItem('token')}`,
     });
-    return this.http.get(direcction, { headers: headers });
+    return this.http.get(url, { headers: headers });
+  }
+
+  getUsers(): Observable<any> {
+    let url = this.apiUrl + '/users';
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    });
+    return this.http.get(url, { headers: headers });
   }
 
   getOrders(): Observable<any> {
-    let direcction = this.apiUrl + '/orders';
+    let url = this.apiUrl + '/orders';
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: `Bearer ${localStorage.getItem('token')}`,
     });
-    return this.http.get(direcction, { headers: headers });
+    return this.http.get(url, { headers: headers });
   }
 
   changeStatusOrders(id: string): Observable<any> {
-    let direcction = this.apiUrl + '/orders/' + id;
+    let url = this.apiUrl + '/orders/' + id;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -52,16 +61,16 @@ export class ConsumirApiService {
       dateProcessed: new Date(),
     };
 
-    return this.http.patch(direcction, requestData, { headers: headers });
+    return this.http.patch(url, requestData, { headers: headers });
   }
 
   getEspecificOrder(identificador: string): Observable<any> {
-    let direcction = this.apiUrl + '/orders/' + identificador;
+    let url = this.apiUrl + '/orders/' + identificador;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: `Bearer ${localStorage.getItem('token')}`,
     });
 
-    return this.http.get(direcction, { headers: headers });
+    return this.http.get(url, { headers: headers });
   }
 }

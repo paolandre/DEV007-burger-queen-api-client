@@ -6,5 +6,5 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
     styleUrls: ['./price.component.css']
 })
 export class PriceComponent {
-    @Input() price: string = '$10';
+    @Input() price: string = '';
 }

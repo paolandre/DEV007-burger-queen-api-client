@@ -3,44 +3,41 @@
     <div class="white-container">
       <div #headerContainer class="header">
         <div class="button-logo-container">
-          <app-two-buttons button1="Personal" button2="Menú"></app-two-buttons>
+          <app-two-buttons button1="Menú" button2="Personal" [onclick1]="toMenu.bind(this)" [onclick2]="toPersonal.bind(this)"></app-two-buttons>
           <div class="logo">
             <app-logo></app-logo>
           </div>
         </div>
       </div>
+    <section class="contenido">
       <div class="add-product">
-        <botoncin text="Agregar ítem"></botoncin>
+        <botoncin text="Agregar {{menu?  'producto' : 'personal'}}" [handleClick]="menu? addProduct.bind(this) : addUser.bind(this)"></botoncin>
       </div>
-      <div class="titles">
-        <div class="product-name">
-          <div>
-            <app-product class="product"></app-product>
-          </div>
-          <div class="title-price-container">
-            <app-total-bill-amount-title class="catgory" title="Interpólenme la category"></app-total-bill-amount-title>
-            <app-price class="price" title="$***"></app-price>
-          </div>
-          <app-trash class="trash"></app-trash>
-          <app-trash class="trash"></app-trash>
-        </div>
+      <div class="menu" *ngIf="menu">
+      <div class="all-products" *ngFor="let product of products">
 
-
-        <app-total-bill-amount-title title="Terminar" class="white"></app-total-bill-amount-title>
+        <app-product class="singleProduct" product="{{product?.name}}"></app-product>
+        <app-price class="singlePrice" price="{{product?.type}}"></app-price>
+        <app-price class="singlePrice" price="${{product?.price}}"></app-price>
+        <app-trash class="singleTrash"></app-trash>
+        <app-trash class="singleTrash"></app-trash>
       </div>
-      <ng-container *ngFor="let order of orders">
-        <div class="container-orders" *ngIf="order?.status === 'pending'" (click)="message(order?.id)">
-          <app-product class="little" *ngIf="order?.status === 'pending'" product="{{ order?.id }}"></app-product>
-          <app-product class="little" *ngIf="order?.status === 'pending'" [product]="timer"></app-product>
-          <app-product *ngIf="order?.status === 'pending'" product="{{ order?.client }}"></app-product>
-          <app-product *ngIf="order?.status === 'pending'" product="{{ order?.dataEntry }}"></app-product>
-          <botoncin *ngIf="order?.status === 'pending'" text="Terminar" (click)="onclick(order?.id)"
-            [handleClick]="finishOrder.bind(this)"></botoncin>
-        </div>
-      </ng-container>
+    </div>
+
+    <div class="menu" *ngIf="menu==false">
+      <div class="staff" *ngFor="let user of users">
+
+        <app-product class="singleProduct singleProduct_user" product="{{user?.email}}"></app-product>
+        <app-price class="singlePrice" price="{{user?.role}}"></app-price>
+        <app-trash class="singleTrash"></app-trash>
+        <app-trash class="singleTrash"></app-trash>
+      </div>
+    </div>
+  </section>
+
       <app-modal #modal childTitle="Detalles del pedido" [childMessage]="detailsOrderMessage"
         [childMessage2]="detailsOrderMessage2" [childMessage3]="detailsOrderMessage3"
         [childMessage4]="detailsOrderMessage4"></app-modal>
     </div>
+
   </div>
-</div>

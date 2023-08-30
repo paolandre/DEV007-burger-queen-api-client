@@ -1,31 +1,39 @@
 /* Contenedor de las cajas derecha e izquierda */
-app-two-buttons{
-    padding: 40px 20px 20px;
+app-two-buttons {
+    padding: 40px 5px 20px 5px;
     display: flex;
-justify-content: space-between;  
+    justify-content: space-between;
     width: 70%;
     margin: 0;
 }
-.product-name {
+
+.all-products,
+.staff {
     display: flex;
     flex-direction: row;
-    align-items: baseline; /* Alinea los elementos en la misma línea base */
-    justify-content: space-between;
-    width: 80%;
-    gap: 10px;
-    padding: 5px;
-    height: 50px;
-  
+    column-gap: 20px;
+    padding: 0px 5px;
+    padding-top: 5px;
+    align-items: unset;
+    margin-top: 2%;
+    zoom: 110%;
+    justify-content: start;
+}
+
+.contenido {
     overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-.add-product{
+    padding-top: 10px;
+}
+
+.menu {
+    overflow: auto;
+}
+
+.add-product {
     display: flex;
     justify-content: end;
-    width: 80%;
-
 }
+
 .container {
     display: flex;
     justify-content: center;
@@ -33,7 +41,7 @@ justify-content: space-between;
     height: 100vh;
     margin: 0;
     border-color: white;
-    }
+}
 
 .subcontainer {
     border-radius: 2px;
@@ -57,8 +65,7 @@ justify-content: space-between;
     box-shadow: 1px 1px 5px 1px #59343e;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding-bottom: 40px;
+    padding: 10px;
 }
 
 .logo {
@@ -99,6 +106,7 @@ app-total-bill-amount-title {
     width: 120px;
     margin: 5px;
 }
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -108,7 +116,8 @@ app-total-bill-amount-title {
 .button-logo-container {
     display: flex;
     justify-content: space-evenly;
-    gap: 40%;}
+    width: 100%;
+}
 
 .white {
     opacity: 0;
@@ -124,20 +133,46 @@ app-total-bill-amount-title {
 app-product {
     margin-right: 5px;
     width: 120px;
+    min-height: 50px;
+
 }
+
 .little {
     width: 70px;
 }
 
-app-product{
-    min-height: 50px;
+.title-price-container {
+    display: flex;
+    /* Nuevo contenedor para título y precio */
+    align-items: baseline;
+    /* Alinea el título y el precio en la misma línea base */
 }
 
-.title-price-container {
-    display: flex; /* Nuevo contenedor para título y precio */
-    align-items: baseline; /* Alinea el título y el precio en la misma línea base */
-  }
-  
-  .trash {
-    align-self: baseline; /* Alinea los elementos .trash en la misma línea base */
+.trash {
+    align-self: baseline;
+    /* Alinea los elementos .trash en la misma línea base */
+    width: 100px;
+    height: 100%;
+    align-items: center;
+}
+
+.singleProduct,
+.singlePrice,
+.singleCategory,
+.singleTrash {
+    margin: 0;
+    flex-grow: 1;
+    height: 100%;
+}
+
+.singlePrice {
+    width: 80px;
+}
+
+.singleProduct_user ::ng-deep .product-cuenta {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    width: 120px;
 }
