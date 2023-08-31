@@ -4,6 +4,7 @@ interface Product {
   id: number;
   name: string;
   price: number;
+  quantity: number;
 }
 
 @Component({
@@ -25,8 +26,6 @@ export class WaiterComponent {
   modalInput2Placeholder: string = 'Mesa';
   modaltext: string = 'Confirmar';
 
-
-
   onclickBreackfast() {
     this.parentMessage = 'Desayuno';
     console.log(this.parentMessage);
@@ -38,9 +37,29 @@ export class WaiterComponent {
   }
 
   onProductClicked(product: Product) {
-    this.selectedProducts.push(product);
+
+    const index = this.selectedProducts.findIndex(item => item.name === product.name);
+    if (index !== -1) {
+      this.selectedProducts[index].quantity = (this.selectedProducts[index].quantity || 0) + 1;
+    } else {
+      this.selectedProducts.push({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        quantity: 1
+      });
+    }
+  }
+  incrementProduct(index: number){
+    this.selectedProducts[index].quantity = (this.selectedProducts[index].quantity || 0) + 1;
   }
 
+  decrementProduct(index: number){
+    if(this.selectedProducts[index].quantity >= 2){
+      this.selectedProducts[index].quantity = (this.selectedProducts[index].quantity || 0) - 1;
+    }
+  }
+  
   removeProduct(index: number) {
     this.selectedProducts.splice(index, 1);
   }
