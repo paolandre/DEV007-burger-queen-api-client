@@ -6,4 +6,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
     styleUrls: ['./kitchen-button.component.css']
 })
 export class KitchenButtonComponent {
+            @Output() kitchenButtonClick: EventEmitter<void> = new EventEmitter<void>();
+        
+            onClick() {
+            this.kitchenButtonClick.emit();
+            }
 }

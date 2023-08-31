@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ConsumirApiService } from '../../../service/consumir-api.service';
 
 @Component({
@@ -9,10 +9,12 @@ import { ConsumirApiService } from '../../../service/consumir-api.service';
 export class ContainerProductPriceComponent implements OnInit {
   list: Array<any> = [];
   @Input() momentDay: string = '';
-  /* set momentDay(val: string) {
+    /* set momentDay(val: string) {
     debugger;
     this._momentDay = val.toUpperCase();
   } */
+  @Output() productClicked = new EventEmitter<any>(); // Emitir evento de producto clicado
+
   constructor(private consumirApi: ConsumirApiService) {}
 
   ngOnInit(): void {
@@ -21,4 +23,10 @@ export class ContainerProductPriceComponent implements OnInit {
       this.list = data;
     });
   }
+
+  onProductClicked(product: any) {
+    // Emitir el evento de producto clicado
+    this.productClicked.emit(product);
+  }
 }
+

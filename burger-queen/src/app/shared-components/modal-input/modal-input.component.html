@@ -1,0 +1,20 @@
+<div class="modal-overlay" *ngIf="showModal">
+  <div class="modal-blur"></div>
+  <div class="modal-wrapper">
+    <div class="modal-content">
+      <ng-container *ngIf="childTitle !== ''">
+        <div class="modal-title">
+          <h3>{{ childTitle }}</h3>
+        </div>
+      </ng-container>
+      <input type="text" [(ngModel)]="input1" [placeholder]="modalInput1Placeholder">
+      <h3 class="title2">{{ childMessage }}</h3>
+      <input type="text" [(ngModel)]="input2" [placeholder]="modalInput2Placeholder">
+      <div class="sent-button">
+        <botoncin [text]="'Confirmar'"></botoncin>
+      </div>
+    </div>
+    <button class="btn" (click)="closeModal()">x</button>
+  </div>
+</div>
+
