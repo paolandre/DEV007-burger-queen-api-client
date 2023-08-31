@@ -1,6 +1,14 @@
 <div class="container-products-column">
   <div class="container-products-row" *ngFor="let item of list">
-    <p class="product" *ngIf="item.type === momentDay">{{ item?.name }}</p>
-    <p class="price" *ngIf="item.type === momentDay">{{ item?.price }}</p>
+    <!-- Verifica si el tipo del producto coincide con el momento del día -->
+    <p class="product"
+       *ngIf="item.type === momentDay"
+       (click)="onProductClicked(item)">
+      {{ item?.name }}
+    </p>
+    <p class="price"
+       *ngIf="item.type === momentDay">
+      {{ item?.price }}
+    </p>
   </div>
 </div>

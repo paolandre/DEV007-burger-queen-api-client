@@ -2,6 +2,7 @@
   <div class="cuadro-izquierda">
     <app-logo></app-logo>
     <app-two-buttons
+      class="two-buttons"
       button1="Desayuno"
       button2="Almuerzo"
       [onclick1]="onclickBreackfast.bind(this)"
@@ -9,26 +10,35 @@
     ></app-two-buttons>
     <app-container-product-price
       [momentDay]="parentMessage"
+      (productClicked)="onProductClicked($event)"
     ></app-container-product-price>
     <app-orders-ready></app-orders-ready>
   </div>
   <div class="cuadro-derecha">
     <div class="subcontenedor-derecho">
-      <app-total-bill-amount-title
-        title="Total de la cuenta"
-      ></app-total-bill-amount-title>
+      <app-total-bill-amount-title class="total" title="Total de la cuenta"></app-total-bill-amount-title>
       <div class="container-cuenta-column">
-        <div class="container-cuenta-row">
+        <div class="container-cuenta-row" *ngFor="let product of selectedProducts; let i = index">
           <app-positive-number-negative></app-positive-number-negative>
-          <app-product
-            [class.specificStyleProduct]="specificStyleProduct"
-          ></app-product>
+          <app-product [class.specificStyleProduct]="specificStyleProduct"></app-product>
           <app-price></app-price>
-          <app-trash></app-trash>
+          <app-trash (click)="removeProduct(i)"></app-trash>
         </div>
       </div>
       <app-total-bill-sum></app-total-bill-sum>
-      <!-- <app-kitchen-button></app-kitchen-button> -->
+      <app-kitchen-button (kitchenButtonClick)="onKitchenButtonClick()"></app-kitchen-button>
     </div>
   </div>
 </div>
+
+<app-modal-input
+  [showModal]="showModal"
+  [childTitle]="modalTitle"
+  [childMessage]="modalMessage"
+  [input1]="modalInput1"
+  [input2]="modalInput2"
+  (closeModal)="closeModal()"
+  text="Confirmar"
+  modalInput1Placeholder = "Nombre"
+  modalInput2Placeholder = "Mesa"
+></app-modal-input>

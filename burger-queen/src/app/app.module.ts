@@ -23,6 +23,7 @@ import { TotalBillSum } from './components/molecules/total-bill-sum/total-bill-s
 import { ModalComponent } from './shared-components/modal/modal.component';
 import { ChefComponent } from './views/chef/chef.component';
 import { AdminMenuComponent } from './views/admin-menu/admin-menu.component';
+import { ModalInputComponent } from './shared-components/modal-input/modal-input.component'
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { AdminMenuComponent } from './views/admin-menu/admin-menu.component';
     TotalBillSum,
     ModalComponent,
     ChefComponent,
-    AdminMenuComponent
+    AdminMenuComponent,
+    ModalInputComponent
   ],
 
   imports: [
