@@ -23,6 +23,8 @@ export class WaiterComponent {
   modalInput2: string = '';
   modalInput1Placeholder: string = 'Nombre';
   modalInput2Placeholder: string = 'Mesa';
+  modaltext: string = 'Confirmar';
+
 
 
   onclickBreackfast() {

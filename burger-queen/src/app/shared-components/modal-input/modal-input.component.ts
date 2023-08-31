@@ -13,6 +13,7 @@ export class ModalInputComponent {
   @Input() input2: string = ''; // Input 2
   @Input() modalInput1Placeholder: string = '';
   @Input() modalInput2Placeholder: string = '';
+  @Input() Confirmar: string = '';
 
 
   closeModal() {

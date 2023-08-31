@@ -7,11 +7,11 @@
           <h3>{{ childTitle }}</h3>
         </div>
       </ng-container>
-      <input type="text" [(ngModel)]="input1" [placeholder]="modalInput1Placeholder">
+      <input type="text" [(ngModel)]="input1" placeholder="{{ modalInput1Placeholder }}">
       <h3 class="title2">{{ childMessage }}</h3>
-      <input type="text" [(ngModel)]="input2" [placeholder]="modalInput2Placeholder">
+      <input type="text" [(ngModel)]="input2" placeholder="{{ modalInput2Placeholder }}">
       <div class="sent-button">
-        <botoncin [text]="'Confirmar'"></botoncin>
+        <botoncin text="Confirmar"></botoncin>
       </div>
     </div>
     <button class="btn" (click)="closeModal()">x</button>
