@@ -9,7 +9,7 @@ import { ConsumirApiService } from '../../../service/consumir-api.service';
 export class ContainerProductPriceComponent implements OnInit {
   list: Array<any> = [];
   @Input() momentDay: string = '';
-    /* set momentDay(val: string) {
+  /* set momentDay(val: string) {
     debugger;
     this._momentDay = val.toUpperCase();
   } */
@@ -26,7 +26,7 @@ export class ContainerProductPriceComponent implements OnInit {
 
   onProductClicked(product: any) {
     // Emitir el evento de producto clicado
+    console.log(product, 333);
     this.productClicked.emit(product);
   }
 }
-

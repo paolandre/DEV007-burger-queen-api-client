@@ -3,41 +3,69 @@
     <div class="white-container">
       <div #headerContainer class="header">
         <div class="button-logo-container">
-          <app-two-buttons button1="Menú" button2="Personal" [onclick1]="toMenu.bind(this)" [onclick2]="toPersonal.bind(this)"></app-two-buttons>
+          <app-two-buttons
+            button1="Menú"
+            button2="Personal"
+            [onclick1]="toMenu.bind(this)"
+            [onclick2]="toPersonal.bind(this)"
+          ></app-two-buttons>
           <div class="logo">
             <app-logo></app-logo>
           </div>
         </div>
       </div>
-    <section class="contenido">
-      <div class="add-product">
-        <botoncin text="Agregar {{menu?  'producto' : 'personal'}}" [handleClick]="menu? addProduct.bind(this) : addUser.bind(this)"></botoncin>
-      </div>
-      <div class="menu" *ngIf="menu">
-      <div class="all-products" *ngFor="let product of products">
+      <section class="contenido">
+        <div class="add-product">
+          <botoncin
+            text="Agregar {{ menu ? 'producto' : 'personal' }}"
+            [handleClick]="menu ? addProduct.bind(this) : addUser.bind(this)"
+          ></botoncin>
+        </div>
+        <div class="scroll">
+          <div class="menu" *ngIf="menu">
+            <div class="all-products" *ngFor="let product of products">
+              <app-product
+                class="singleProduct"
+                product="{{ product?.name }}"
+              ></app-product>
+              <app-price
+                class="singlePrice"
+                price="{{ product?.type }}"
+              ></app-price>
+              <app-price
+                class="singlePrice"
+                price="${{ product?.price }}"
+              ></app-price>
+              <app-trash class="singleTrash"></app-trash>
+              <app-trash class="singleTrash"></app-trash>
+            </div>
+          </div>
 
-        <app-product class="singleProduct" product="{{product?.name}}"></app-product>
-        <app-price class="singlePrice" price="{{product?.type}}"></app-price>
-        <app-price class="singlePrice" price="${{product?.price}}"></app-price>
-        <app-trash class="singleTrash"></app-trash>
-        <app-trash class="singleTrash"></app-trash>
-      </div>
+          <div class="menu" *ngIf="menu == false">
+            <div class="staff" *ngFor="let user of users">
+              <app-product
+                class="singleProduct singleProduct_user"
+                product="{{ user?.email }}"
+              ></app-product>
+              <app-price
+                class="singlePrice"
+                price="{{ user?.role }}"
+              ></app-price>
+              <app-trash class="singleTrash"></app-trash>
+              <app-trash class="singleTrash"></app-trash>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <app-modal
+        #modal
+        childTitle="Detalles del pedido"
+        [childMessage]="detailsOrderMessage"
+        [childMessage2]="detailsOrderMessage2"
+        [childMessage3]="detailsOrderMessage3"
+        [childMessage4]="detailsOrderMessage4"
+      ></app-modal>
     </div>
-
-    <div class="menu" *ngIf="menu==false">
-      <div class="staff" *ngFor="let user of users">
-
-        <app-product class="singleProduct singleProduct_user" product="{{user?.email}}"></app-product>
-        <app-price class="singlePrice" price="{{user?.role}}"></app-price>
-        <app-trash class="singleTrash"></app-trash>
-        <app-trash class="singleTrash"></app-trash>
-      </div>
-    </div>
-  </section>
-
-      <app-modal #modal childTitle="Detalles del pedido" [childMessage]="detailsOrderMessage"
-        [childMessage2]="detailsOrderMessage2" [childMessage3]="detailsOrderMessage3"
-        [childMessage4]="detailsOrderMessage4"></app-modal>
-    </div>
-
   </div>
+</div>

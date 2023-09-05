@@ -16,31 +16,42 @@
   </div>
   <div class="cuadro-derecha">
     <div class="subcontenedor-derecho">
-      <app-total-bill-amount-title class="total" title="Total de la cuenta"></app-total-bill-amount-title>
+      <app-total-bill-amount-title
+        class="total"
+        title="Total de la cuenta"
+      ></app-total-bill-amount-title>
       <div class="container-cuenta-column">
-        <div class="container-cuenta-row" *ngFor="let product of selectedProducts; let i = index">
+        <div
+          class="container-cuenta-row"
+          *ngFor="let product of selectedProducts; let i = index"
+        >
           <div class="simbol" (click)="incrementProduct(i)">+</div>
           <span class="number"> {{ product.quantity }} </span>
           <div class="simbol" (click)="decrementProduct(i)">-</div>
-          <app-product product="{{ product.name }}" [class.specificStyleProduct]="specificStyleProduct"></app-product>
-          <app-price price="{{ product.price }}"></app-price>
+          <app-product
+            product="{{ product.name }}"
+            [class.specificStyleProduct]="specificStyleProduct"
+          ></app-product>
+          <app-price price="{{ product.price * product.quantity }}"></app-price>
           <app-trash (click)="removeProduct(i)"></app-trash>
         </div>
       </div>
       <app-total-bill-sum></app-total-bill-sum>
-      <app-kitchen-button (kitchenButtonClick)="onKitchenButtonClick()"></app-kitchen-button>
+      <app-kitchen-button
+        (kitchenButtonClick)="onKitchenButtonClick()"
+      ></app-kitchen-button>
     </div>
   </div>
 </div>
 
 <app-modal-input
-  [showModal]="showModal"
+  (confirmOrder)="sendOrder($event)"
+  #modalClient
   [childTitle]="modalTitle"
   [childMessage]="modalMessage"
   [input1]="modalInput1"
   [input2]="modalInput2"
-  (closeModal)="closeModal()"
   text="Confirmar"
-  modalInput1Placeholder = "Nombre"
-  modalInput2Placeholder = "Mesa"
+  modalInput1Placeholder="Nombre"
+  modalInput2Placeholder="Mesa"
 ></app-modal-input>
