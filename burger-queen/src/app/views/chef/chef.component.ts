@@ -49,12 +49,19 @@ export class ChefComponent {
     this.products = [];
     this.consumirApi.getEspecificOrder(id).subscribe((data) => {
       data.products.forEach((element: any) => {
-        this.products.push(`${element.product.name}`);
+        this.products.push(`${element.name}, ${element.quantity}`);
       });
-      console.log(this.products);
-      this.detailsOrderMessage = `Cliente: ${data.client}`;
-      this.detailsOrderMessage2 = `Estado: ${data.status}`;
-      this.detailsOrderMessage3 = `Pedido: ${this.products.join('-')}`;
+      this.detailsOrderMessage = `Mesero: ${localStorage.getItem(
+        'user_email'
+      )}`;
+
+      const productNames = data.products.map((product: any) => product.name);
+      const productQuantity = data.products.map((product: any) => product.quantity);
+
+
+      this.detailsOrderMessage2 = `Mesa: ${data.table}`;
+      
+      this.detailsOrderMessage3 = `Pedido: ${this.products.join(' - ')}`;    
     });
 
     this.modal.openModal();

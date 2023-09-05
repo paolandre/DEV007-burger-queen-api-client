@@ -35,8 +35,8 @@ export class WaiterComponent {
     console.log(clientInfo, this.selectedProducts);
     const dataOrder = {
       client: clientInfo.client,
-      products: this.selectedProducts,
       table: clientInfo.table,
+      products: this.selectedProducts,
       status: "pending",
       dataEntry: new Date()
     };
