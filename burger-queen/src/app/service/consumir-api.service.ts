@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { LoginI } from '../shared-components/interfaces/loginI';
 import { ILoginRes } from '../shared-components/interfaces/ILoginRes';
+import { OrderI } from '../shared-components/interfaces/IOrder';
 
 @Injectable({
   providedIn: 'root',
@@ -62,6 +63,17 @@ export class ConsumirApiService {
     };
 
     return this.http.patch(url, requestData, { headers: headers });
+  }
+
+ postOrder(data: any): Observable<any> {
+    let url = this.apiUrl + '/orders';
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    });
+    const orderInfo = data;
+
+    return this.http.post(url, orderInfo, { headers: headers });
   }
 
   getEspecificOrder(identificador: string): Observable<any> {
