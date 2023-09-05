@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { ConsumirApiService } from 'src/app/service/consumir-api.service';
-import { ModalComponent } from 'src/app/shared-components/modal/modal.component';
+import { ModalAdminProductComponent } from 'src/app/shared-components/modal-admin-product/modal-admin-product.component';
 
 @Component({
     selector: 'app-admin-menu',
@@ -8,13 +8,24 @@ import { ModalComponent } from 'src/app/shared-components/modal/modal.component'
     styleUrls: ['./admin-menu.component.css'],
 })
 export class AdminMenuComponent {
+    showModal: boolean = false;
+    modalTitle: string = 'Nombre del ítem';
+    modalMessage: string = 'Momento del día';
+    modalMessage1: string = 'Precio';
+    modalInput1: string = '';
+    modalInput2: string = '';
+    modalInput3: string = '';
+    modalInput1Placeholder: string = 'Nombre';
+    modalInput2Placeholder: string = 'Mesa';
+    modalInput3Placeholder: string = 'Mesa';
+    modaltext: string = 'Confirmar'; 
     singleProduct: boolean = true;
     singleCategory: boolean = true;
     singlePrice: boolean = true;
     singleTrash: boolean = true;
     menu: boolean = true;
     //Aquí hay que agregar tipados
-    @ViewChild('modal') modal!: ModalComponent;
+    @ViewChild('modal') modal!: ModalAdminProductComponent;
     detailsOrderMessage: string = '';
     detailsOrderMessage2: string = '';
     detailsOrderMessage3: string = '';
@@ -27,6 +38,10 @@ export class AdminMenuComponent {
     minuto: number = 0;
     segundo: number = 0;
     timer: string = `${this.hora}:${this.minuto}:${this.segundo}`;
+
+    closeModal() {
+        this.showModal = false;
+    }
 
     constructor(private consumirApi: ConsumirApiService) { }
     toMenu() {
@@ -70,12 +85,12 @@ export class AdminMenuComponent {
 addProduct(){
     this.detailsOrderMessage = "Pronto podrás añadir un producto";
 
-    this.modal.openModal();
+    this.showModal = true;
 }
 addUser(){
     this.detailsOrderMessage = "Pronto podrás añadir un usuario";
 
-    this.modal.openModal();
+    this.showModal = true;
 }
     message(id: string) {
         this.products = [];
@@ -89,7 +104,8 @@ addUser(){
             this.detailsOrderMessage3 = `Pedido: ${this.products.join('-')}`;
         });
 
-        this.modal.openModal();
+        this.showModal = true;
+
     }
 
     timerFunction() {
@@ -98,4 +114,8 @@ addUser(){
         }, 1000);
     }
     finishOrder() { }
+
+    removeProduct(index: number) {
+        this.products.splice(index, 1);
+    }
 }

@@ -20,7 +20,7 @@
         <app-price class="singlePrice" price="{{product?.type}}"></app-price>
         <app-price class="singlePrice" price="${{product?.price}}"></app-price>
         <app-trash class="singleTrash"></app-trash>
-        <app-trash class="singleTrash"></app-trash>
+        <app-trash class="singleTrash" (click)="removeProduct(product)"></app-trash>
       </div>
     </div>
 
@@ -30,14 +30,25 @@
         <app-product class="singleProduct singleProduct_user" product="{{user?.email}}"></app-product>
         <app-price class="singlePrice" price="{{user?.role}}"></app-price>
         <app-trash class="singleTrash"></app-trash>
-        <app-trash class="singleTrash"></app-trash>
+        <app-trash class="singleTrash" ></app-trash>
       </div>
     </div>
   </section>
 
-      <app-modal #modal childTitle="Detalles del pedido" [childMessage]="detailsOrderMessage"
-        [childMessage2]="detailsOrderMessage2" [childMessage3]="detailsOrderMessage3"
-        [childMessage4]="detailsOrderMessage4"></app-modal>
+  <app-modal-admin-product
+  [showModal]="showModal"
+  [childTitle]="modalTitle"
+  [childMessage]="modalMessage"
+  [childMessage1]="modalMessage1"
+  [input1]="modalInput1"
+  [input2]="modalInput2"
+  [input3]="modalInput3"
+  (closeModal)="closeModal()"
+  text="Confirmar"
+  modalInput1Placeholder = "ítem"
+  modalInput2Placeholder = "desayuno/almuerzo"
+  modalInput3Placeholder = "$"
+></app-modal-admin-product>
     </div>
 
   </div>
