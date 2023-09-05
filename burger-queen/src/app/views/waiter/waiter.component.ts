@@ -1,6 +1,7 @@
 import { style } from '@angular/animations';
 import { Component, ViewChild } from '@angular/core';
 import { ModalInputComponent } from 'src/app/shared-components/modal-input/modal-input.component';
+import { ConsumirApiService } from 'src/app/service/consumir-api.service';
 
 interface Product {
   id: number;
@@ -28,13 +29,20 @@ export class WaiterComponent {
   modalInput2Placeholder: string = 'Mesa';
   modaltext: string = 'Confirmar';
 
+  constructor(private consumirApi: ConsumirApiService) {}
+
   sendOrder(clientInfo: any) {
     console.log(clientInfo, this.selectedProducts);
     const dataOrder = {
       client: clientInfo.client,
       products: this.selectedProducts,
       table: clientInfo.table,
+      status: "pending",
+      dataEntry: new Date()
     };
+    this.consumirApi.postOrder(dataOrder).subscribe(() => {
+      console.log(dataOrder);
+    });
   }
 
   onclickBreackfast() {
