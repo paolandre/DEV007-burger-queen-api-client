@@ -1,4 +1,14 @@
 <div class="container-buttons">
-  <botoncin [text]="button1" [handleClick]="onclick1"></botoncin>
-  <botoncin [text]="button2" [handleClick]="onclick2"></botoncin>
+  <botoncin
+    [text]="button1"
+    [handleClick]="onclick1"
+    [changeColor]="changeColor1"
+    (click)="cambiarColor1.bind(this)"
+  ></botoncin>
+  <botoncin
+    [text]="button2"
+    [handleClick]="onclick2"
+    [changeColor]="changeColor2"
+    (click)="cambiarColor2.bind(this)"
+  ></botoncin>
 </div>

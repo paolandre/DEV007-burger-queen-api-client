@@ -40,9 +40,8 @@ input {
 
 input:focus {
   outline: none;
-  box-shadow: inset 0px 0px 5px #F2A950;
+  box-shadow: inset 0px 0px 5px #f2a950;
 }
-
 
 input::placeholder {
   text-align: center;
