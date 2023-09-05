@@ -73,7 +73,11 @@ app-total-bill-amount-title {
 .white {
   opacity: 0;
 }
-
+.all-container {
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 .container-orders {
   display: flex;
   gap: 3px;
@@ -81,6 +85,10 @@ app-total-bill-amount-title {
   padding-top: 5px;
 }
 
+/* Esconde la barra del scroll */
+.all-container::-webkit-scrollbar {
+  display: none;
+}
 app-product {
   margin-right: 5px;
   width: 120px;

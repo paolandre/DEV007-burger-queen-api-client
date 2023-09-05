@@ -1,178 +1,182 @@
 /* Contenedor de las cajas derecha e izquierda */
 app-two-buttons {
-    padding: 40px 5px 20px 5px;
-    display: flex;
-    justify-content: space-between;
-    width: 70%;
-    margin: 0;
+  padding: 40px 5px 20px 5px;
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 0;
 }
 
 .all-products,
 .staff {
-    display: flex;
-    flex-direction: row;
-    column-gap: 20px;
-    padding: 0px 5px;
-    padding-top: 5px;
-    align-items: unset;
-    margin-top: 2%;
-    zoom: 110%;
-    justify-content: start;
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+  padding: 0px 5px;
+  padding-top: 5px;
+  align-items: unset;
+  margin-top: 2%;
+  zoom: 110%;
+  justify-content: start;
 }
 
 .contenido {
-    overflow: hidden;
-    padding-top: 10px;
+  padding-top: 10px;
 }
 
-.menu {
-    overflow: auto;
+.scroll {
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+/* Esconde la barra del scroll */
+.scroll::-webkit-scrollbar {
+  display: none;
 }
 
 .add-product {
-    display: flex;
-    justify-content: end;
+  display: flex;
+  justify-content: end;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    border-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  border-color: white;
 }
 
 .subcontainer {
-    border-radius: 2px;
-    background: linear-gradient(to bottom, #b6c557, #f2a950);
-    box-shadow: 1px 1px 5px 1px #090909;
-    width: 580px;
-    height: 380px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+  border-radius: 2px;
+  background: linear-gradient(to bottom, #b6c557, #f2a950);
+  box-shadow: 1px 1px 5px 1px #090909;
+  width: 580px;
+  height: 380px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
 /* Fondo beige*/
 .white-container {
-    width: 550px;
-    height: 320px;
-    border-radius: 2px;
-    background: #fffdf8;
-    box-shadow: 1px 1px 5px 1px #59343e;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
+  width: 550px;
+  height: 320px;
+  border-radius: 2px;
+  background: #fffdf8;
+  box-shadow: 1px 1px 5px 1px #59343e;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
 
 .logo {
-    width: 550px;
-    height: 70px;
-    display: flex;
-    justify-content: end;
-    flex-direction: row;
-    margin: 0;
-    width: 30%;
+  width: 550px;
+  height: 70px;
+  display: flex;
+  justify-content: end;
+  flex-direction: row;
+  margin: 0;
+  width: 30%;
 }
 
 .label-preparation {
-    display: flex;
-    align-items: center;
-    margin: 30px;
-    padding: 5px;
-    width: 160px;
-    height: 20px;
-    font-size: medium;
-    background-color: #59343e;
-    color: white;
+  display: flex;
+  align-items: center;
+  margin: 30px;
+  padding: 5px;
+  width: 160px;
+  height: 20px;
+  font-size: medium;
+  background-color: #59343e;
+  color: white;
 }
 
 .titles {
-    width: auto;
-    display: flex;
-    flex-direction: row;
-    margin-top: 50px;
-    margin-left: 15px;
-    padding: 0px 5px;
-    padding-top: 5px;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  margin-left: 15px;
+  padding: 0px 5px;
+  padding-top: 5px;
 }
 
 app-total-bill-amount-title {
-    display: flex;
-    justify-content: center;
-    width: 120px;
-    margin: 5px;
+  display: flex;
+  justify-content: center;
+  width: 120px;
+  margin: 5px;
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .button-logo-container {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .white {
-    opacity: 0;
+  opacity: 0;
 }
 
 .container-orders {
-    display: flex;
-    gap: 3px;
-    padding: 0px 5px;
-    padding-top: 5px;
+  display: flex;
+  gap: 3px;
+  padding: 0px 5px;
+  padding-top: 5px;
 }
 
 app-product {
-    margin-right: 5px;
-    width: 120px;
-    min-height: 50px;
-
+  margin-right: 5px;
+  width: 120px;
+  min-height: 50px;
 }
 
 .little {
-    width: 70px;
+  width: 70px;
 }
 
 .title-price-container {
-    display: flex;
-    /* Nuevo contenedor para título y precio */
-    align-items: baseline;
-    /* Alinea el título y el precio en la misma línea base */
+  display: flex;
+  /* Nuevo contenedor para título y precio */
+  align-items: baseline;
+  /* Alinea el título y el precio en la misma línea base */
 }
 
 .trash {
-    align-self: baseline;
-    /* Alinea los elementos .trash en la misma línea base */
-    width: 100px;
-    height: 100%;
-    align-items: center;
+  align-self: baseline;
+  /* Alinea los elementos .trash en la misma línea base */
+  width: 100px;
+  height: 100%;
+  align-items: center;
 }
 
 .singleProduct,
 .singlePrice,
 .singleCategory,
 .singleTrash {
-    margin: 0;
-    flex-grow: 1;
-    height: 100%;
+  margin: 0;
+  flex-grow: 1;
+  height: 100%;
 }
 
 .singlePrice {
-    width: 80px;
+  width: 80px;
 }
 
 .singleProduct_user ::ng-deep .product-cuenta {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    display: inline-block;
-    width: 120px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  width: 120px;
 }

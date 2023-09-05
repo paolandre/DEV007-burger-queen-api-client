@@ -10,4 +10,15 @@ export class TwoButtonsComponent {
   @Input() button2: string = '';
   @Input() onclick1: Function = () => {};
   @Input() onclick2: Function = () => {};
+  changeColor1: boolean = false;
+  changeColor2: boolean = true;
+
+  cambiarColor1() {
+    this.changeColor1 = false;
+    this.changeColor2 = true;
+  }
+  cambiarColor2() {
+    this.changeColor1 = true;
+    this.changeColor2 = false;
+  }
 }
