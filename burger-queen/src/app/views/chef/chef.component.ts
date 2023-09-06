@@ -40,7 +40,7 @@ export class ChefComponent {
 
   onclick(id: string) {
     this.consumirApi.changeStatusOrders(id).subscribe((data2) => {
-      console.log(data2);
+      console.log(data2, 444);
       this.getAllOrders();
     });
   }

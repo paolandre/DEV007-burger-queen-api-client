@@ -1,23 +1,10 @@
 <div class="cuadros-pedidos-listos">
     <h3>Pedidos listos</h3>
     <div class="column-pedidos-listos">
-        <button class="pedido-listo">Mesa 1</button>
-        <button class="pedido-listo">Mesa 2</button>
-        <button class="pedido-listo">Mesa 2</button>
-        <button class="pedido-listo">Mesa 2</button>
-        <button class="pedido-listo">Mesa 28</button>
-        <button class="pedido-listo">Mesa 2</button>
-        <button class="pedido-listo">Mesa 2</button>
-        <button class="pedido-listo">Mesa 2</button>
-        <button class="pedido-listo">Mesa 2</button>
-        <button class="pedido-listo">Mesa 2</button>
-        <button class="pedido-listo">Mesa 2</button>
-        <button class="pedido-listo">Mesa 2</button>
-        <button class="pedido-listo">Mesa 2</button>
-        <button class="pedido-listo">Mesa 2</button>
-        <button class="pedido-listo">Mesa 2</button>
-        <button class="pedido-listo">Mesa 2</button>
-        <button class="pedido-listo">Mesa 2</button>
-        <button class="pedido-listo">Mesa 2</button>
+        <ng-container *ngFor="let order of orders">
+            <div *ngIf="order?.status === 'delivered'">
+                <button class="pedido-listo" #table *ngIf="order?.status === 'delivered'">Mesa: {{ order?.table}}</button>
+            </div>
+        </ng-container>
     </div>
 </div>
