@@ -1,6 +1,6 @@
 import { style } from '@angular/animations';
 import { Component, ViewChild } from '@angular/core';
-import { ModalInputComponent } from 'src/app/shared-components/modal-input/modal-input.component';
+import { ModalInputComponent } from 'src/app/shared-components/modal-add-order/modal-input.component';
 import { ConsumirApiService } from 'src/app/service/consumir-api.service';
 
 interface Product {

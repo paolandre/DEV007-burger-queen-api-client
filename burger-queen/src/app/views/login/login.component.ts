@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ConsumirApiService } from '../../service/consumir-api.service';
 import { Router } from '@angular/router';
-import { ModalComponent } from '../../shared-components/modal/modal.component';
+import { ModalComponent } from '../../shared-components/modal-message/modal.component';
 import { ViewChild } from '@angular/core';
 
 @Component({

@@ -1,0 +1,39 @@
+<div class="modal-overlay" *ngIf="showModal">
+  <div class="modal-blur"></div>
+  <div class="modal-wrapper">
+    <div class="modal-content">
+      <ng-container *ngIf="childTitle !== ''">
+        <div class="modal-title">
+          <h3>Nombre del ítem</h3>
+        </div>
+      </ng-container>
+      <input
+        #client
+        type="text"
+        [(ngModel)]="input1"
+        placeholder="ítem"
+      />
+      <h3 class="title2">Momento del día</h3>
+      <input
+        #table
+        type="text"
+        [(ngModel)]="input2"
+        placeholder="Desayuno/Almuerzo"
+      />
+      <h3 class="title3">Precio</h3>
+      <input
+        #table
+        type="text"
+        [(ngModel)]="input3"
+        placeholder="$1"
+      />
+      <div class="sent-button">
+        <botoncin
+          text="Confirmar"
+          (click)="confirmModal(client.value, table.value)"
+        ></botoncin>
+      </div>
+    </div>
+    <button class="btn" (click)="closeModal()">x</button>
+  </div>
+</div>
