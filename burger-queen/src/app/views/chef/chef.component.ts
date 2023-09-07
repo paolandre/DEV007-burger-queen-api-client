@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { ConsumirApiService } from 'src/app/service/consumir-api.service';
-import { ModalComponent } from 'src/app/shared-components/modal/modal.component';
+import { ModalComponent } from 'src/app/shared-components/modal-message/modal.component';
 
 @Component({
   selector: 'app-chef',

@@ -20,11 +20,11 @@ import { ProductComponent } from './components/atoms/product/product.component';
 import { PriceComponent } from './components/atoms/price/price.component';
 import { KitchenButtonComponent } from './components/atoms/kitchen-button/kitchen-button.component';
 import { TotalBillSum } from './components/molecules/total-bill-sum/total-bill-sum.component';
-import { ModalComponent } from './shared-components/modal/modal.component';
+import { ModalComponent } from './shared-components/modal-message/modal.component';
 import { ChefComponent } from './views/chef/chef.component';
 import { AdminMenuComponent } from './views/admin-menu/admin-menu.component';
-import { ModalInputComponent } from './shared-components/modal-input/modal-input.component'
-import { ModalAdminProductComponent } from './shared-components/modal-admin-product/modal-admin-product.component';
+import { ModalInputComponent } from './shared-components/modal-add-order/modal-input.component'
+import { ModalAdminProductComponent } from './shared-components/modal-add-product/modal-admin-product.component';
 
 
 @NgModule({

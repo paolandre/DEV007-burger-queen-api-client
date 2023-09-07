@@ -58,14 +58,15 @@
         </div>
       </section>
 
-      <app-modal
-        #modal
-        childTitle="Detalles del pedido"
-        [childMessage]="detailsOrderMessage"
-        [childMessage2]="detailsOrderMessage2"
-        [childMessage3]="detailsOrderMessage3"
-        [childMessage4]="detailsOrderMessage4"
-      ></app-modal>
+      <app-modal-admin-product
+      (confirmOrder)="sendOrder($event)"
+      #modalClient
+      [input1]="modalInput1"
+      [input2]="modalInput2"
+      [input3]="modalInput3"
+      text="Confirmar"
+
+    ></app-modal-admin-product>
     </div>
   </div>
 </div>

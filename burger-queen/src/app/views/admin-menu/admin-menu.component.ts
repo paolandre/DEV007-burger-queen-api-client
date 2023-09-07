@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { ConsumirApiService } from 'src/app/service/consumir-api.service';
-import { ModalAdminProductComponent } from 'src/app/shared-components/modal-admin-product/modal-admin-product.component';
+import { ModalAdminProductComponent } from 'src/app/shared-components/modal-add-product/modal-admin-product.component';
 
 @Component({
     selector: 'app-admin-menu',
@@ -9,23 +9,18 @@ import { ModalAdminProductComponent } from 'src/app/shared-components/modal-admi
 })
 export class AdminMenuComponent {
     showModal: boolean = false;
-    modalTitle: string = 'Nombre del ítem';
-    modalMessage: string = 'Momento del día';
-    modalMessage1: string = 'Precio';
     modalInput1: string = '';
     modalInput2: string = '';
     modalInput3: string = '';
-    modalInput1Placeholder: string = 'Nombre';
-    modalInput2Placeholder: string = 'Mesa';
-    modalInput3Placeholder: string = 'Mesa';
-    modaltext: string = 'Confirmar'; 
+    modaltext: string = 'Confirmar';
+
     singleProduct: boolean = true;
     singleCategory: boolean = true;
     singlePrice: boolean = true;
     singleTrash: boolean = true;
     menu: boolean = true;
     //Aquí hay que agregar tipados
-    @ViewChild('modal') modal!: ModalAdminProductComponent;
+    @ViewChild('modalClient') modalClient!: ModalAdminProductComponent;
     detailsOrderMessage: string = '';
     detailsOrderMessage2: string = '';
     detailsOrderMessage3: string = '';
@@ -39,6 +34,20 @@ export class AdminMenuComponent {
     segundo: number = 0;
     timer: string = `${this.hora}:${this.minuto}:${this.segundo}`;
 
+
+    sendOrder(clientInfo: any) {
+        console.log(clientInfo, this.products);
+        const dataOrder = {
+          name: clientInfo.name,
+          price: clientInfo.price,
+          products: this.products,
+          type: clientInfo.type,
+          dataEntry: new Date()
+        };
+        this.consumirApi.getProducts().subscribe(() => {
+          console.log(dataOrder);
+        });
+      }
     closeModal() {
         this.showModal = false;
     }
@@ -70,11 +79,6 @@ export class AdminMenuComponent {
             this.products = data;
         });
     }
-    getOrderForId(id: string) {
-        this.consumirApi.getEspecificOrder(id).subscribe((data) => {
-            console.log(data);
-        });
-    }
 
     // onclick(id: string) {
     // this.consumirApi.changeStatusOrders(id).subscribe((data2) => {
@@ -83,38 +87,16 @@ export class AdminMenuComponent {
     // });
     // }
 addProduct(){
-    this.detailsOrderMessage = "Pronto podrás añadir un producto";
+    this.modalClient.openModal();
 
-    this.showModal = true;
+    console.log('product works')
 }
 addUser(){
-    this.detailsOrderMessage = "Pronto podrás añadir un usuario";
+    this.modalClient.openModal();
 
-    this.showModal = true;
+    console.log('users works')
+
 }
-    message(id: string) {
-        this.products = [];
-        this.consumirApi.getEspecificOrder(id).subscribe((data) => {
-            data.products.forEach((element: any) => {
-                this.products.push(`${element.product.name}`);
-            });
-            console.log(this.products);
-            this.detailsOrderMessage = `Cliente: ${data.client}`;
-            this.detailsOrderMessage2 = `Estado: ${data.status}`;
-            this.detailsOrderMessage3 = `Pedido: ${this.products.join('-')}`;
-        });
-
-        this.showModal = true;
-
-    }
-
-    timerFunction() {
-        setInterval(() => {
-            this.segundo += 1;
-        }, 1000);
-    }
-    finishOrder() { }
-
     removeProduct(index: number) {
         this.products.splice(index, 1);
     }
