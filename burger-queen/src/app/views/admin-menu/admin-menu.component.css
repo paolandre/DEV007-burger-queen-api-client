@@ -7,16 +7,20 @@ app-two-buttons {
   margin: 0;
 }
 
+.options{
+  display: flex;
+  gap: 10px;
+}
+
 .all-products,
 .staff {
   display: flex;
   flex-direction: row;
-  column-gap: 20px;
+  column-gap: 7px;
   padding: 0px 5px;
   padding-top: 5px;
   align-items: unset;
   margin-top: 2%;
-  zoom: 110%;
   justify-content: start;
 }
 
@@ -28,6 +32,7 @@ app-two-buttons {
   overflow: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  max-height: 200px;
 }
 /* Esconde la barra del scroll */
 .scroll::-webkit-scrollbar {
@@ -163,7 +168,8 @@ app-product {
 .singleProduct,
 .singlePrice,
 .singleCategory,
-.singleTrash {
+.singleTrash,
+.singleEdit {
   margin: 0;
   flex-grow: 1;
   height: 100%;

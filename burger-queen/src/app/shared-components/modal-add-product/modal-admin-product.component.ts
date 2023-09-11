@@ -14,15 +14,19 @@ export class ModalAdminProductComponent {
   @Input() input3: string = ''; // Input 3
 
   @Input() Confirmar: string = '';
-  client: string = '';
-  table: string = '';
+  newProductName: string = '';
+  newProductType: string = '';
+  newProductprice: string = '';
+
   @Output() confirmOrder = new EventEmitter<any>();
 
-  confirmModal(x: string, y: string) {
-    this.client = x;
-    this.table = y;
-    console.log(this.client, this.table);
-    this.confirmOrder.emit({ client: this.client, table: this.table });
+  confirmModal(x: string, y: string, z: string) {
+    this.newProductName = x;
+    this.newProductType = y;
+    this.newProductprice = z;
+
+    console.log(this.newProductName, this.newProductprice);
+    this.confirmOrder.emit({ name: this.newProductName, type: this.newProductType, price: this.newProductprice });
     this.closeModal();
   }
   openModal() {

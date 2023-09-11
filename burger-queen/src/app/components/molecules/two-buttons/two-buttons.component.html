@@ -1,14 +1,13 @@
 <div class="container-buttons">
   <botoncin
     [text]="button1"
-    [handleClick]="onclick1"
+    [handleClick]="innerClick1.bind(this)"
     [changeColor]="changeColor1"
-    (click)="cambiarColor1.bind(this)"
+
   ></botoncin>
   <botoncin
-    [text]="button2"
-    [handleClick]="onclick2"
+    [text]="button2" 
+    [handleClick]="innerClick2.bind(this)"
     [changeColor]="changeColor2"
-    (click)="cambiarColor2.bind(this)"
   ></botoncin>
 </div>

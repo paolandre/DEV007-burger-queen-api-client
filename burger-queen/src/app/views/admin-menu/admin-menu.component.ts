@@ -12,6 +12,7 @@ export class AdminMenuComponent {
     modalInput1: string = '';
     modalInput2: string = '';
     modalInput3: string = '';
+    modalInput4: string = '';
     modaltext: string = 'Confirmar';
 
     singleProduct: boolean = true;
@@ -35,19 +36,18 @@ export class AdminMenuComponent {
     timer: string = `${this.hora}:${this.minuto}:${this.segundo}`;
 
 
-    sendOrder(clientInfo: any) {
-        console.log(clientInfo, this.products);
+    addNewProduct(data: any) {
+        console.log(data, this.products);
         const dataOrder = {
-          name: clientInfo.name,
-          price: clientInfo.price,
-          products: this.products,
-          type: clientInfo.type,
-          dataEntry: new Date()
+            name: data.name,
+            price: data.price,
+            type: data.type,
+            dataEntry: new Date()
         };
-        this.consumirApi.getProducts().subscribe(() => {
-          console.log(dataOrder);
+        this.consumirApi.postProduct(data).subscribe(() => {
+            console.log(dataOrder);
         });
-      }
+    }
     closeModal() {
         this.showModal = false;
     }
@@ -55,13 +55,9 @@ export class AdminMenuComponent {
     constructor(private consumirApi: ConsumirApiService) { }
     toMenu() {
         this.menu = true;
-        console.log(this.menu)
-
     }
     toPersonal() {
         this.menu = false;
-        console.log(this.menu)
-
     }
     ngOnInit(): void {
         this.getProducts();
@@ -86,17 +82,17 @@ export class AdminMenuComponent {
     //     this.getAllOrders();
     // });
     // }
-addProduct(){
-    this.modalClient.openModal();
+    addProduct() {
+        this.modalClient.openModal();
 
-    console.log('product works')
-}
-addUser(){
-    this.modalClient.openModal();
+        console.log('product works')
+    }
+    addUser() {
+        this.modalClient.openModal();
 
-    console.log('users works')
+        console.log('users works')
 
-}
+    }
     removeProduct(index: number) {
         this.products.splice(index, 1);
     }

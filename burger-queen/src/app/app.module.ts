@@ -25,6 +25,8 @@ import { ChefComponent } from './views/chef/chef.component';
 import { AdminMenuComponent } from './views/admin-menu/admin-menu.component';
 import { ModalInputComponent } from './shared-components/modal-add-order/modal-input.component'
 import { ModalAdminProductComponent } from './shared-components/modal-add-product/modal-admin-product.component';
+import { EditComponent } from './components/atoms/edit-icon/edit.component';
+import { ModalAdminUserComponent } from './shared-components/modal-add-user/modal-add-user.component';
 
 
 @NgModule({
@@ -48,7 +50,9 @@ import { ModalAdminProductComponent } from './shared-components/modal-add-produc
     ChefComponent,
     AdminMenuComponent,
     ModalInputComponent,
-    ModalAdminProductComponent
+    ModalAdminProductComponent,
+    EditComponent,
+    ModalAdminUserComponent
   ],
 
   imports: [
