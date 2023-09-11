@@ -28,6 +28,7 @@ export class WaiterComponent {
   modalInput1Placeholder: string = 'Nombre';
   modalInput2Placeholder: string = 'Mesa';
   modaltext: string = 'Confirmar';
+  finalCount: number = 0;
 
   constructor(private consumirApi: ConsumirApiService) {}
 
@@ -70,10 +71,13 @@ export class WaiterComponent {
         quantity: 1,
       });
     }
+    this.calculateTotal();
   }
   incrementProduct(index: number) {
     this.selectedProducts[index].quantity =
       (this.selectedProducts[index].quantity || 0) + 1;
+      this.calculateTotal()
+
   }
 
   decrementProduct(index: number) {
@@ -81,13 +85,22 @@ export class WaiterComponent {
       this.selectedProducts[index].quantity =
         (this.selectedProducts[index].quantity || 0) - 1;
     }
+    this.calculateTotal()
+
   }
 
   removeProduct(index: number) {
     this.selectedProducts.splice(index, 1);
+    this.calculateTotal()
   }
 
   onKitchenButtonClick() {
     this.modalClient.openModal();
+  }
+  calculateTotal() {
+    this.finalCount = this.selectedProducts.reduce((total, product) => {
+      return total + (product.price * product.quantity);
+    }, 0);
+    console.log(this.finalCount);
   }
 }

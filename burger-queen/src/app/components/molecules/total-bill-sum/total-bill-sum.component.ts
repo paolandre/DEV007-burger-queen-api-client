@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 
 export class TotalBillSum {
+    @Input() totalPrice: number = 0;
 }
