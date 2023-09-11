@@ -22,10 +22,6 @@ button {
   transition: background-color 0.3s, color 0.3s;
 }
 
-button:hover {
-  background: #59343e;
-  color: white;
-}
 
 /* Estilos globales de los input*/
 input {

@@ -4,31 +4,38 @@
     <div class="modal-content">
       <ng-container *ngIf="childTitle !== ''">
       </ng-container>
-      <h3 class="title1" >Nombre del ítem</h3>
+      <h3 class="title1" >Nombre del usuario</h3>
       <input
-        #newProductName
+        #newUserName
         type="text"
         [(ngModel)]="input1"
         placeholder="ítem"
       />
-      <h3 class="title2">Momento del día</h3>
+      <h3 class="title2">Correo</h3>
       <input
-        #newProductPrice
+        #newUserEmail
         type="text"
         [(ngModel)]="input2"
         placeholder="Desayuno/Almuerzo"
       />
-      <h3 class="title3">Precio</h3>
+      <h3 class="title3">Rol</h3>
       <input
-        #newProductType
+        #newUserRole
         type="text"
         [(ngModel)]="input3"
+        placeholder="$1"
+      />
+      <h3 class="title4">Contraseña</h3>
+      <input
+        #newUserPassword
+        type="text"
+        [(ngModel)]="input4"
         placeholder="$1"
       />
       <div class="sent-button">
         <botoncin
           text="Confirmar"
-          (click)="confirmModal(newProductName.value, newProductPrice.value, newProductType.value)"
+          (click)="confirmModal(newUserName.value, newUserEmail.value, newUserRole.value, newUserPassword.value)"
         ></botoncin>
       </div>
     </div>

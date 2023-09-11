@@ -5,3 +5,8 @@
   font-family: "League Spartan", sans-serif;
   font-size: 12px;
 }
+
+.buttonSelected{
+  background: #59343e;
+  color: white;
+}

@@ -23,7 +23,7 @@
         </div>
         <div class="scroll">
           <div class="menu" *ngIf="menu">
-            <div class="all-products" *ngFor="let product of products">
+            <div class="all-products" *ngFor="let product of products; let i = index" >
               <app-product
                 class="singleProduct"
                 product="{{ product?.name }}"
@@ -36,8 +36,10 @@
                 class="singlePrice"
                 price="${{ product?.price }}"
               ></app-price>
-              <app-trash class="singleTrash"></app-trash>
-              <app-trash class="singleTrash"></app-trash>
+              <div class="options">
+              <app-edit class="singleEdit"></app-edit>
+              <app-trash class="singleTrash" (click)="removeProduct(i)"></app-trash>
+            </div>
             </div>
           </div>
 
@@ -51,7 +53,7 @@
                 class="singlePrice"
                 price="{{ user?.role }}"
               ></app-price>
-              <app-trash class="singleTrash"></app-trash>
+              <app-edit class="singleEdit"></app-edit>
               <app-trash class="singleTrash"></app-trash>
             </div>
           </div>
@@ -59,7 +61,7 @@
       </section>
 
       <app-modal-admin-product
-      (confirmOrder)="sendOrder($event)"
+      (confirmOrder)="addNewProduct($event)"
       #modalClient
       [input1]="modalInput1"
       [input2]="modalInput2"
@@ -67,6 +69,17 @@
       text="Confirmar"
 
     ></app-modal-admin-product>
+    <app-modal-add-user
+    (confirmOrder)="addNewProduct($event)"
+    #modalClient
+    [input1]="modalInput1"
+    [input2]="modalInput2"
+    [input3]="modalInput3"
+    [input4]="modalInput4"
+
+    text="Confirmar"
+
+  ></app-modal-add-user>
     </div>
   </div>
 </div>

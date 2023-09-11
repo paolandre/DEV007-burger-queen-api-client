@@ -65,7 +65,7 @@ export class ConsumirApiService {
     return this.http.patch(url, requestData, { headers: headers });
   }
 
- postOrder(data: any): Observable<any> {
+  postOrder(data: any): Observable<any> {
     let url = this.apiUrl + '/orders';
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -74,6 +74,28 @@ export class ConsumirApiService {
     const orderInfo = data;
 
     return this.http.post(url, orderInfo, { headers: headers });
+  }
+
+  postUser(data: any): Observable<any> {
+    let url = this.apiUrl + '/users';
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    });
+    const requestData = data;
+
+    return this.http.post(url, requestData, { headers: headers });
+  }
+
+  postProduct(data: any): Observable<any> {
+    let url = this.apiUrl + '/products';
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    });
+    const requestData = data;
+
+    return this.http.post(url, requestData, { headers: headers });
   }
 
   getEspecificOrder(identificador: string): Observable<any> {
