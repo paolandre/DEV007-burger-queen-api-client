@@ -44,7 +44,7 @@
           </div>
 
           <div class="menu" *ngIf="menu == false">
-            <div class="staff" *ngFor="let user of users">
+            <div class="staff" *ngFor="let user of users; let i = index">
               <app-product
                 class="singleProduct singleProduct_user"
                 product="{{ user?.email }}"
@@ -54,7 +54,7 @@
                 price="{{ user?.role }}"
               ></app-price>
               <app-edit class="singleEdit"></app-edit>
-              <app-trash class="singleTrash"></app-trash>
+              <app-trash class="singleTrash" (click)="removeUser(user?.id)"></app-trash>
             </div>
           </div>
         </div>
@@ -70,8 +70,8 @@
 
     ></app-modal-admin-product>
     <app-modal-add-user
-    (confirmOrder)="addNewProduct($event)"
-    #modalClient
+    (confirmOrder)="addNewUser($event)"
+    #modalUser
     [input1]="modalInput1"
     [input2]="modalInput2"
     [input3]="modalInput3"

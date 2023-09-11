@@ -9,28 +9,27 @@
         #newUserName
         type="text"
         [(ngModel)]="input1"
-        placeholder="ítem"
+        placeholder="Nombre"
       />
       <h3 class="title2">Correo</h3>
       <input
         #newUserEmail
         type="text"
         [(ngModel)]="input2"
-        placeholder="Desayuno/Almuerzo"
+        placeholder="user@example.com"
       />
       <h3 class="title3">Rol</h3>
-      <input
-        #newUserRole
-        type="text"
-        [(ngModel)]="input3"
-        placeholder="$1"
-      />
+      <select [(ngModel)]="input3" placeholder="Rol" #newUserRole>
+        <option value="mesero">Mesero</option>
+        <option value="chef">Chef</option>
+        <option value="admin">Admin</option>
+      </select>
       <h3 class="title4">Contraseña</h3>
       <input
         #newUserPassword
         type="text"
         [(ngModel)]="input4"
-        placeholder="$1"
+        placeholder="Contraseña"
       />
       <div class="sent-button">
         <botoncin

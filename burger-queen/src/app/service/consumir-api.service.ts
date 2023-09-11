@@ -87,6 +87,16 @@ export class ConsumirApiService {
     return this.http.post(url, requestData, { headers: headers });
   }
 
+  deleteUser(id: any): Observable<any> {
+    let url = this.apiUrl + '/users/' + id;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    });
+
+    return this.http.delete(url, { headers: headers });
+  }
+
   postProduct(data: any): Observable<any> {
     let url = this.apiUrl + '/products';
     const headers = new HttpHeaders({
