@@ -38,12 +38,13 @@ export class WaiterComponent {
       client: clientInfo.client,
       table: clientInfo.table,
       products: this.selectedProducts,
-      status: "pending",
-      dataEntry: new Date()
+      status: 'pending',
+      dataEntry: new Date(),
     };
     this.consumirApi.postOrder(dataOrder).subscribe(() => {
       console.log(dataOrder);
     });
+    window.location.reload();
   }
 
   onclickBreackfast() {
@@ -76,8 +77,7 @@ export class WaiterComponent {
   incrementProduct(index: number) {
     this.selectedProducts[index].quantity =
       (this.selectedProducts[index].quantity || 0) + 1;
-      this.calculateTotal()
-
+    this.calculateTotal();
   }
 
   decrementProduct(index: number) {
@@ -85,13 +85,12 @@ export class WaiterComponent {
       this.selectedProducts[index].quantity =
         (this.selectedProducts[index].quantity || 0) - 1;
     }
-    this.calculateTotal()
-
+    this.calculateTotal();
   }
 
   removeProduct(index: number) {
     this.selectedProducts.splice(index, 1);
-    this.calculateTotal()
+    this.calculateTotal();
   }
 
   onKitchenButtonClick() {
@@ -99,7 +98,7 @@ export class WaiterComponent {
   }
   calculateTotal() {
     this.finalCount = this.selectedProducts.reduce((total, product) => {
-      return total + (product.price * product.quantity);
+      return total + product.price * product.quantity;
     }, 0);
     console.log(this.finalCount);
   }

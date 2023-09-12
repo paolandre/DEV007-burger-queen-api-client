@@ -11,6 +11,11 @@
       <p>{{ childMessage2 }}</p>
       <p>{{ childMessage3 }}</p>
       <p>{{ childMessage4 }}</p>
+      <botoncin
+        *ngIf="button"
+        [handleClick]="confirm.bind(this)"
+        text="Confirmar"
+      ></botoncin>
     </div>
     <button (click)="closeModal()">x</button>
   </div>
