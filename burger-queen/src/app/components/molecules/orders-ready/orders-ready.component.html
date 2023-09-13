@@ -1,10 +1,27 @@
 <div class="cuadros-pedidos-listos">
-    <h3>Pedidos listos</h3>
-    <div class="column-pedidos-listos">
-        <ng-container *ngFor="let order of orders">
-            <div *ngIf="order?.status === 'delivered'">
-                <button class="pedido-listo" #table *ngIf="order?.status === 'delivered'">Mesa: {{ order?.table}}</button>
-            </div>
-        </ng-container>
-    </div>
+  <h3>Pedidos listos</h3>
+  <div class="column-pedidos-listos">
+    <ng-container *ngFor="let order of orders">
+      <div *ngIf="order?.status === 'delivered'">
+        <button
+          (click)="openTable(order?.id)"
+          class="pedido-listo"
+          #table
+          *ngIf="order?.status === 'delivered'"
+        >
+          Mesa: {{ order?.table }}
+        </button>
+      </div>
+    </ng-container>
+  </div>
 </div>
+<app-modal
+  [idOrder]="idOrder"
+  [button]="true"
+  #modal
+  childTitle="Detalles del pedido"
+  [childMessage]="detailsOrderMessage"
+  [childMessage2]="detailsOrderMessage2"
+  [childMessage3]="detailsOrderMessage3"
+>
+</app-modal>

@@ -1,50 +1,51 @@
 /* Contenedor amarillo de pedidos listos de la vista del mesero*/
 .cuadros-pedidos-listos {
-    background: linear-gradient(to left, #f2a950, #b6c557);
-    flex-direction: column;
-    display: flex;
-    gap: 5px;
-    justify-content: flex-start;
-    text-align: center;
-    height: 140px;
-    position: absolute;
-    /* Cambiar a posición absoluta para colocar en la parte inferior */
-    bottom: 0;
-    /* Colocar en la parte inferior */
-    width: 100%;
+  background: linear-gradient(to left, #f2a950, #b6c557);
+  flex-direction: column;
+  display: flex;
+  gap: 5px;
+  justify-content: flex-start;
+  text-align: center;
+  height: 140px;
+  position: absolute;
+  /* Cambiar a posición absoluta para colocar en la parte inferior */
+  bottom: 0;
+  /* Colocar en la parte inferior */
+  width: 100%;
 }
-
 
 /* Titulo de pedidos listos */
 h3 {
-    width: 100%;
-    margin-bottom: -7px;
-    padding-bottom: 8px;
-    font-family: "League Spartan", sans-serif;
-    font-size: 13px;
+  width: 100%;
+  margin-bottom: -7px;
+  padding-bottom: 8px;
+  font-family: "League Spartan", sans-serif;
+  font-size: 13px;
 }
 
 /*Caja de pedidos listos */
 .column-pedidos-listos {
-    padding: 10px;
-    text-align: center;
-    overflow: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  padding: 10px;
+  text-align: center;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 /* Desactiva la barra del scroll */
 .column-pedidos-listos::-webkit-scrollbar {
-    display: none;
-    /* Desactiva el scrollbar en navegadores basados en WebKit (como Chrome y Safari) */
+  display: none;
+  /* Desactiva el scrollbar en navegadores basados en WebKit (como Chrome y Safari) */
 }
 
 /*  Cada botón de pedido listo */
 .pedido-listo {
-    order: 1;
-    justify-content: center;
-    font-family: "League Spartan", sans-serif;
-    box-shadow: 0px 0px 3px #59343e;
-    font-size: 12px;
-    margin: 5px;
+  order: 1;
+  justify-content: center;
+  font-family: "League Spartan", sans-serif;
+  box-shadow: 0px 0px 3px #59343e;
+  font-size: 12px;
+  margin: 5px;
 }
