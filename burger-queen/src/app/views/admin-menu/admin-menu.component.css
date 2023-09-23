@@ -18,10 +18,9 @@ app-two-buttons {
   flex-direction: row;
   column-gap: 7px;
   padding: 0px 5px;
-  padding-top: 5px;
   align-items: unset;
-  margin-top: 2%;
   justify-content: start;
+  margin: 0;
 }
 
 .contenido {
@@ -33,6 +32,8 @@ app-two-buttons {
   -ms-overflow-style: none;
   scrollbar-width: none;
   max-height: 200px;
+ padding-top: 15px;
+ margin: 0;
 }
 /* Esconde la barra del scroll */
 .scroll::-webkit-scrollbar {
@@ -50,7 +51,6 @@ app-two-buttons {
   align-items: center;
   height: 100vh;
   margin: 0;
-  border-color: white;
 }
 
 .subcontainer {
@@ -69,11 +69,10 @@ app-two-buttons {
 /* Fondo beige*/
 .white-container {
   width: 550px;
-  height: 320px;
+  height: 350px;
   border-radius: 2px;
   background: #fffdf8;
   box-shadow: 1px 1px 5px 1px #59343e;
-  display: flex;
   flex-direction: column;
   padding: 10px;
 }
@@ -143,7 +142,7 @@ app-total-bill-amount-title {
 app-product {
   margin-right: 5px;
   width: 120px;
-  min-height: 50px;
+  min-height: 35px;
 }
 
 .little {
@@ -179,10 +178,7 @@ app-product {
   width: 80px;
 }
 
-.singleProduct_user ::ng-deep .product-cuenta {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  display: inline-block;
-  width: 120px;
+.singleProduct_user, 
+.singlePrice_user {
+  width: 100%;
 }

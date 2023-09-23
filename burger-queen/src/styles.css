@@ -46,3 +46,28 @@ input::placeholder {
   color: rgb(171, 168, 168);
   font-size: 12px;
 }
+
+/* Estilos para listas  despleglables */
+select {
+  height: 25px;
+  border: none;
+  width: 100%;
+  box-shadow: 0px 0px 3px #59343e;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* Estilos para las opciones del select */
+select option {
+  height: 25px;
+  border: none;
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 0;
+}
+
+select:focus {
+  outline: none;
+  box-shadow: inset 0px 0px 5px #f2a950;
+}

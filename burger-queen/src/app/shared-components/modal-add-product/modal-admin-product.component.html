@@ -12,12 +12,11 @@
         placeholder="ítem"
       />
       <h3 class="title2">Momento del día</h3>
-      <input
-        #newProductPrice
-        type="text"
-        [(ngModel)]="input2"
-        placeholder="Desayuno/Almuerzo"
-      />
+      <select #newProductPrice type="text" [(ngModel)]="input2">
+        <option value="Desayuno">Desayuno</option>
+        <option value="Almuerzo">Almuerzo</option>
+      </select>
+      
       <h3 class="title3">Precio</h3>
       <input
         #newProductType
