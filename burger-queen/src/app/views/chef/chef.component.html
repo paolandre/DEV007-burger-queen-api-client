@@ -35,7 +35,7 @@
             <app-product
               class="little"
               *ngIf="order?.status === 'pending'"
-              [product]="timer"
+              product="{{ cronometer(order?.dataEntry) }}"
               (click)="message(order?.id)"
             ></app-product>
             <app-product
@@ -44,10 +44,10 @@
               (click)="message(order?.id)"
             ></app-product>
             <app-product
-            *ngIf="order?.status === 'pending'"
-            product="{{ formatTime(order?.dataEntry) }}"
-            (click)="message(order?.id)"
-          ></app-product>          
+              *ngIf="order?.status === 'pending'"
+              product="{{ formatTime(order?.dataEntry) }}"
+              (click)="message(order?.id)"
+            ></app-product>
             <botoncin
               *ngIf="order?.status === 'pending'"
               text="Terminar"
