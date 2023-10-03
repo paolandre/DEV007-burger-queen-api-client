@@ -14,7 +14,7 @@
       <botoncin
         *ngIf="button"
         [handleClick]="confirm.bind(this)"
-        text="Entregado"
+        [text]="nameButton"
       ></botoncin>
     </div>
     <button (click)="closeModal()">x</button>

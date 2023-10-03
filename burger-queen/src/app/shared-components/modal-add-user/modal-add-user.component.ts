@@ -19,7 +19,7 @@ export class ModalAdminUserComponent {
   newUserEmail: string = '';
   newUserRole: string = '';
   newUserPassword: string = '';
-
+  idUser: string = '';
 
   @Output() confirmOrder = new EventEmitter<any>();
 
@@ -29,12 +29,34 @@ export class ModalAdminUserComponent {
     this.newUserRole = z;
     this.newUserPassword = a;
 
-
     //console.log(this.newProductName, this.newProductprice);
-    this.confirmOrder.emit({ name: this.newUserName, email: this.newUserEmail, role: this.newUserRole, password: this.newUserPassword});
+    if (this.idUser) {
+      this.confirmOrder.emit({
+        userId: this.idUser,
+        name: this.newUserName,
+        email: this.newUserEmail,
+        role: this.newUserRole,
+        password: this.newUserPassword,
+      });
+    } else {
+      this.confirmOrder.emit({
+        name: this.newUserName,
+        email: this.newUserEmail,
+        role: this.newUserRole,
+        password: this.newUserPassword,
+      });
+    }
     this.closeModal();
   }
-  openModal() {
+  openModal(id: any) {
+    if (id) {
+      this.idUser = id;
+    } else {
+      this.input1 = '';
+      this.input2 = '';
+      this.input3 = '';
+      this.input4 = '';
+    }
     this.showModal = true;
   }
   closeModal() {

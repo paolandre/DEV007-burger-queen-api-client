@@ -86,9 +86,28 @@ export class ConsumirApiService {
 
     return this.http.post(url, requestData, { headers: headers });
   }
+  editUser(data: any, id: any): Observable<any> {
+    let url = this.apiUrl + '/users/' + id;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    });
+    const requestData = data;
+
+    return this.http.patch(url, requestData, { headers: headers });
+  }
 
   deleteUser(id: any): Observable<any> {
     let url = this.apiUrl + '/users/' + id;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    });
+
+    return this.http.delete(url, { headers: headers });
+  }
+  deleteProduct(id: any): Observable<any> {
+    let url = this.apiUrl + '/products/' + id;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -126,5 +145,24 @@ export class ConsumirApiService {
     });
 
     return this.http.delete(url, { headers: headers });
+  }
+
+  getSpecificUser(id: any): Observable<any> {
+    let url = this.apiUrl + '/users/' + id;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    });
+
+    return this.http.get(url, { headers: headers });
+  }
+  getSpecificProduct(id: any) {
+    let url = this.apiUrl + '/products/' + id;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    });
+
+    return this.http.get(url, { headers: headers });
   }
 }
