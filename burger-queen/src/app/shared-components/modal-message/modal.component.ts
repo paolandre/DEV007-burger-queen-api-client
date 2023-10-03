@@ -12,6 +12,9 @@ export class ModalComponent {
   @Input() childMessage2: string = '';
   @Input() childMessage3: string = '';
   @Input() childMessage4: string = '';
+  @Input() nameButton: string = '';
+  @Input() idDelete: any;
+  @Input() idDeleteProduct: any;
   showModal: boolean = false;
 
   @Input() button: boolean = false;
@@ -22,13 +25,26 @@ export class ModalComponent {
 
   constructor(private consumirApi: ConsumirApiService) {}
   confirm() {
-    this.consumirApi.deleteOrder(this.idOrder).subscribe((data) => {
-      console.log(data);
-    });
+    if (this.idDeleteProduct) {
+      this.consumirApi.deleteProduct(this.idDeleteProduct).subscribe((data) => {
+        console.log(data);
+      });
+      // Confirmar Eliminar usuario
+    } else if (this.idDelete) {
+      this.consumirApi.deleteUser(this.idDelete).subscribe((data) => {
+        console.log(data);
+      });
+    } else {
+      this.consumirApi.deleteOrder(this.idOrder).subscribe((data) => {
+        console.log(data);
+      });
+    }
     this.closeModal();
     window.location.reload();
   }
-
+  getUsers() {
+    throw new Error('Method not implemented.');
+  }
   openModal() {
     this.showModal = true;
   }

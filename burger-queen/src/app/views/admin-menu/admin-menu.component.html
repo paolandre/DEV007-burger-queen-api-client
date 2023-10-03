@@ -40,15 +40,14 @@
                 price="${{ product?.price }}"
               ></app-price>
               <div class="options">
-                <app-edit class="singleEdit" (click)="addProduct()"></app-edit>
+                <app-edit class="singleEdit"></app-edit>
                 <app-trash
                   class="singleTrash"
-                  (click)="removeProduct(i)"
+                  (click)="removeProduct(product?.id)"
                 ></app-trash>
               </div>
             </div>
           </div>
-
           <div class="menu" *ngIf="menu == false">
             <div class="staff" *ngFor="let user of users; let i = index">
               <app-product
@@ -59,7 +58,10 @@
                 class="singlePrice singlePrice_user"
                 price="{{ user?.role }}"
               ></app-price>
-              <app-edit class="singleEdit" (click)="addUser()"></app-edit>
+              <app-edit
+                class="singleEdit"
+                (click)="editThisUser(user?.id)"
+              ></app-edit>
               <app-trash
                 class="singleTrash"
                 (click)="removeUser(user?.id)"
@@ -78,7 +80,7 @@
         text="Confirmar"
       ></app-modal-admin-product>
       <app-modal-add-user
-        (confirmOrder)="addNewUser($event)"
+        (confirmOrder)="addOrEditUser($event)"
         #modalUser
         [input1]="modalInput1"
         [input2]="modalInput2"
@@ -86,6 +88,14 @@
         [input4]="modalInput4"
         text="Confirmar"
       ></app-modal-add-user>
+      <app-modal
+        [button]="true"
+        nameButton="Eliminar"
+        #modal
+        [childMessage]="detailsOrderMessage"
+        [idDelete]="idDelete"
+      >
+      </app-modal>
     </div>
   </div>
 </div>
